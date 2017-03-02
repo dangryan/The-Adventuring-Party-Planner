@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context="theadventuringparty.techproficiency.MainActivity">
+
+    <TextView
+        android:text="Please enter a string:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Data_Entry"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/Data_Entry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:id="@+id/editText"
+        android:hint="Enter Text Here!"
+        android:inputType="text"/>
+
+    <Button
+        android:text="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:onClick="writeMessage"
+        android:layout_alignBaseline="@+id/Load"
+        android:layout_alignBottom="@+id/Load"
+        android:layout_alignRight="@+id/Data_Entry"
+        android:layout_alignEnd="@+id/Data_Entry"
+        android:layout_marginRight="34dp"
+        android:layout_marginEnd="34dp"/>
+
+    <Button
+        android:text="Look"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Load"
+        android:onClick="sendMessage"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/Data_Entry"
+        android:layout_alignStart="@+id/Data_Entry"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"/>
+
+
+</RelativeLayout>

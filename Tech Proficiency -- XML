@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.ajbohr.data_input.MainActivity">
+
+    <TextView
+        android:text="@string/Data_Entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Data_Entry"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/Submit_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_marginBottom="108dp"
+        android:onClick="writeMessage"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/Load"
+        android:layout_alignStart="@+id/Load" />
+
+    <Button
+        android:text="@string/Load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Load"
+        android:onClick="readMessage"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/editText"
+        android:ems="10"
+        android:layout_below="@+id/Data_Entry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:id="@+id/editText"
+        android:hint="Enter Text Here!" />
+
+    <TextView
+        android:text="@string/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/button"
+        android:layout_alignRight="@+id/Data_Entry"
+        android:layout_alignEnd="@+id/Data_Entry"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/Data_Entry"
+        android:layout_alignStart="@+id/Data_Entry" />
+
+
+</RelativeLayout>

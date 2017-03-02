@@ -1,0 +1,47 @@
+package theadventuringparty.techproficiency;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class MainActivity extends AppCompatActivity {
+    EditText editText;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        editText = (EditText)findViewById(R.id.editText);
+    }
+
+    public void writeMessage(View view) {
+        ///if {type editText.getText ()
+        String Message = ((editText.getText().toString())+"\n");
+        String file_name = "Message";
+
+        try {
+            FileOutputStream fos = openFileOutput (file_name, MODE_APPEND);
+            fos.write (Message.getBytes());
+            fos.close();
+            Toast.makeText (getApplicationContext (), "Message Saved.", Toast.LENGTH_LONG).show ();
+            editText.setText ("");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, Look.class);
+        startActivity(intent);
+    }
+}

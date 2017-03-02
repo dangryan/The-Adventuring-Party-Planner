@@ -1,0 +1,135 @@
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class RPS {
+    private int wins = 0;
+    private int losses = 0;
+    private int draws = 0;
+
+    public enum GameOutcome {
+        WIN, LOSE, DRAW
+    }
+
+
+    public GameOutcome getGameOutcome(String play1Choice, String play2Choice, String gameMode) {
+        if (gameMode.equalsIgnoreCase("1")){
+            if (play1Choice.equalsIgnoreCase("ROCK")) {
+                //USER PICKS ROCK
+                if (play2Choice.equalsIgnoreCase("PAPER")) {
+                    // Rock < Paper
+                    losses++;
+                    return GameOutcome.LOSE;
+                } else if (play2Choice.equalsIgnoreCase("SCISSORS")) {
+                    // Rock > Scissors
+                    wins++;
+                    return GameOutcome.WIN;
+                }
+            } else if (play1Choice.equalsIgnoreCase("PAPER")) {
+                //USER PICKS PAPER
+                if (play2Choice.equalsIgnoreCase("SCISSORS")) {
+                    // Paper < Scissors
+                    losses++;
+                    return GameOutcome.LOSE;
+                } else if (play2Choice.equalsIgnoreCase("ROCK")) {
+                    // Paper > Rock
+                    wins++;
+                    return GameOutcome.WIN;
+                }
+            } else if (play1Choice.equalsIgnoreCase("SCISSORS")) {
+                //USER PICKS SCISSORS
+                if (play2Choice.equalsIgnoreCase("ROCK")) {
+                    // Scissors < Rock
+                    losses++;
+                    return GameOutcome.LOSE;
+                } else if (play2Choice.equalsIgnoreCase("PAPER")) {
+                    // Scissors > Paper
+                    wins++;
+                    return GameOutcome.WIN;
+                }
+            }
+            //If None of the Above occurs, then it must be a draw
+            draws++;
+            return GameOutcome.DRAW;
+            }
+       else if (gameMode.equalsIgnoreCase("2")){
+            if (play1Choice.equalsIgnoreCase("ROCK")) {
+                //USER PICKS ROCK
+                if (play2Choice.equalsIgnoreCase("PAPER")) {
+                    // Rock < Paper
+                    return GameOutcome.LOSE;
+                } else if (play2Choice.equalsIgnoreCase("SCISSORS")) {
+                    // Rock > Scissors
+                    return GameOutcome.WIN;
+                }
+            } else if (play1Choice.equalsIgnoreCase("PAPER")) {
+                //USER PICKS PAPER
+                if (play2Choice.equalsIgnoreCase("SCISSORS")) {
+                    // Paper < Scissors
+                    return GameOutcome.LOSE;
+                } else if (play2Choice.equalsIgnoreCase("ROCK")) {
+                    // Paper > Rock
+                    return GameOutcome.WIN;
+                }
+            } else if (play1Choice.equalsIgnoreCase("SCISSORS")) {
+                //USER PICKS SCISSORS
+                if (play2Choice.equalsIgnoreCase("ROCK")) {
+                    // Scissors < Rock
+                    return GameOutcome.LOSE;
+                } else if (play2Choice.equalsIgnoreCase("PAPER")) {
+                    // Scissors > Paper
+                    return GameOutcome.WIN;
+                }
+            }
+            //If None of the Above occurs, then it must be a draw
+            return GameOutcome.DRAW;
+        }
+       return GameOutcome.DRAW;
+    }
+
+    public String humChoice(){
+        System.out.println("Player 1, please enter rock, paper, or scissors.");
+        String HUM;
+        Scanner in = new Scanner(System.in);
+        HUM = in.nextLine();
+        return HUM;
+    }
+    
+     public String humChoice2(){
+        System.out.println("Player 2, please enter rock, paper, or scissors.");
+        String HUM2;
+        Scanner in = new Scanner(System.in);
+        HUM2 = in.nextLine();
+        return HUM2;
+    }
+
+    public String getRandomChoice() {
+        String CPUchoice = "";
+
+        Random rand = new Random();
+        int num = rand.nextInt(3) + 1;
+
+        if(num == 1){
+            CPUchoice = "ROCK";
+        }
+        if(num == 2){
+            CPUchoice = "SCISSORS";
+        }
+        else {
+            CPUchoice = "PAPER";
+        }
+        return CPUchoice;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public int getLosses() {
+        return losses;
+    }
+
+    public int getDraws() {
+        return draws;
+    }
+}

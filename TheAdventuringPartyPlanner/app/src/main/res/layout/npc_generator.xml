@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/character_input"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="theadventuringparty.theadventuringpartyplanner.MainActivity"
+    android:foregroundTint="@color/colorPrimary"
+    android:background="@drawable/paper_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp">
+
+            <Spinner
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/raceSpinner"
+                android:layout_alignTop="@+id/raceText"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignBottom="@+id/raceText"/>
+
+            <TextView
+                android:text="NPC Generator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pageTitle"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:layout_marginTop="26dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/genderSpinner"
+                android:layout_alignBottom="@+id/genderText"
+                android:layout_toEndOf="@+id/npcNumText"
+                android:layout_alignLeft="@+id/classSpinner"
+                android:layout_alignStart="@+id/classSpinner"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/classSpinner"
+                android:layout_alignTop="@+id/classText"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignLeft="@+id/raceSpinner"
+                android:layout_alignStart="@+id/raceSpinner"/>
+
+            <TextView
+                android:text="Gender:"
+                android:layout_height="wrap_content"
+                android:id="@+id/genderText"
+                android:fontFamily="serif"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                android:layout_marginTop="14dp"
+                android:layout_below="@+id/classText"
+                android:layout_alignLeft="@+id/raceText"
+                android:layout_alignStart="@+id/raceText"
+                android:layout_toStartOf="@+id/genderSpinner"
+                android:layout_width="wrap_content"
+                android:layout_alignRight="@+id/npcNumText"
+                android:layout_alignEnd="@+id/npcNumText"/>
+
+            <TextView
+                android:text="Class:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/classText"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="serif"
+                android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/raceSpinner"
+                android:layout_alignLeft="@+id/raceText"
+                android:layout_alignStart="@+id/raceText"/>
+
+            <TextView
+                android:text="Race:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/raceText"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="serif"
+                android:textSize="16sp"
+                android:layout_marginTop="19dp"
+                android:layout_below="@+id/npcNumText"
+                android:layout_alignLeft="@+id/npcNumText"
+                android:layout_alignStart="@+id/npcNumText"/>
+
+            <TextView
+                android:text="Alignment:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:id="@+id/alignmentText"
+                android:layout_below="@+id/genderText"
+                android:layout_alignLeft="@+id/genderText"
+                android:layout_alignStart="@+id/genderText"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="serif"
+                android:textSize="16sp"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/alignmentSpinner"
+                android:layout_alignTop="@+id/alignmentText"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/pageTitle"
+                android:layout_alignLeft="@+id/genderSpinner"
+                android:layout_alignStart="@+id/genderSpinner"/>
+
+            <TextView
+                android:text="Number of NPCs:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/npcNumText"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="serif"
+                android:textSize="16sp"
+                android:layout_marginTop="52dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginStart="27dp"
+                android:layout_below="@+id/pageTitle"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+
+            <Button
+                android:text="Generate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/generateButton"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@android:color/background_light"
+                android:textAlignment="center"
+                android:layout_below="@+id/alignmentSpinner"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="65dp"
+                android:fontFamily="serif"
+                android:onClick="onNpcGenerateClick"/>
+
+            <TextView
+                android:text="Occupation:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/alignmentSpinner"
+                android:layout_alignLeft="@+id/alignmentText"
+                android:layout_alignStart="@+id/alignmentText"
+                android:layout_marginTop="16dp"
+                android:id="@+id/occupationText"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                android:fontFamily="serif"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/occupationSpinner"
+                android:layout_alignBottom="@+id/occupationText"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignLeft="@+id/alignmentSpinner"
+                android:layout_alignStart="@+id/alignmentSpinner"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <Spinner
+        android:layout_height="wrap_content"
+        android:id="@+id/npcNumSpinner"
+        android:layout_marginTop="106dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="150dp"/>
+
+</RelativeLayout>
