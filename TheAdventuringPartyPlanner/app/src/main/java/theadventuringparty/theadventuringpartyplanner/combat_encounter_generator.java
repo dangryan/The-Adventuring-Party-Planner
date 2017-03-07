@@ -46,6 +46,7 @@ public class combat_encounter_generator extends AppCompatActivity {
         intent.putExtra("lootChoice", lootChoice);
         intent.putExtra("enemyNumChoice", enemyNumChoice);
 
+        //test test test test
         startActivity(intent);
     }
 }
