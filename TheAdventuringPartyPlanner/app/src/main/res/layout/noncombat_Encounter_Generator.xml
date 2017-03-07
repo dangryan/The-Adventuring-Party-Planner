@@ -39,17 +39,6 @@
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:id="@+id/event_dropdown"
-        />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/num_of_npcs_dropdown"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/generateButton"
@@ -93,5 +82,13 @@
         android:textColor="@color/colorPrimaryDark"
         android:layout_height="150dp"
         android:fontFamily="serif"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_dropdown"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>

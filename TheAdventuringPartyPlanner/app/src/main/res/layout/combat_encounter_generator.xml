@@ -81,88 +81,97 @@
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/raceSpinner"
-                        android:layout_alignTop="@+id/raceText"
+                        android:id="@+id/enemyTypeSpinner"
+                        android:layout_alignTop="@+id/enemyTypeText"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignLeft="@+id/npcNumSpinner"
-                        android:layout_alignStart="@+id/npcNumSpinner"/>
+                        android:layout_alignLeft="@+id/difficultySpinner"
+                        android:layout_alignStart="@+id/difficultySpinner"
+                        android:entries="@array/monsterTypeArray"
+                        android:background="@android:color/darker_gray"/>
 
                     <Spinner
                         android:layout_height="wrap_content"
-                        android:id="@+id/npcNumSpinner"
+                        android:id="@+id/difficultySpinner"
                         android:layout_width="200dp"
-                        android:layout_above="@+id/raceText"
+                        android:layout_above="@+id/enemyTypeText"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true"
                         android:layout_toRightOf="@+id/generateButton"
-                        android:layout_toEndOf="@+id/generateButton"/>
+                        android:layout_toEndOf="@+id/generateButton"
+                        android:spinnerMode="dropdown"
+                        android:background="@android:color/darker_gray"
+                        android:entries="@array/monsterDifficultyArray"/>
 
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/genderSpinner"
-                        android:layout_alignBottom="@+id/genderText"
-                        android:layout_toEndOf="@+id/npcNumText"
-                        android:layout_alignLeft="@+id/classSpinner"
-                        android:layout_alignStart="@+id/classSpinner"/>
+                        android:id="@+id/enemyNumSpinner"
+                        android:layout_alignBottom="@+id/enemyNumText"
+                        android:layout_toEndOf="@+id/difficultyText"
+                        android:layout_alignLeft="@+id/lootSpinner"
+                        android:layout_alignStart="@+id/lootSpinner"
+                        android:entries="@array/monsterNumArray"
+                        android:background="@android:color/darker_gray"/>
 
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/classSpinner"
-                        android:layout_alignTop="@+id/classText"
+                        android:id="@+id/lootSpinner"
+                        android:layout_alignTop="@+id/lootText"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignLeft="@+id/raceSpinner"
-                        android:layout_alignStart="@+id/raceSpinner"/>
+                        android:layout_alignLeft="@+id/enemyTypeSpinner"
+                        android:layout_alignStart="@+id/enemyTypeSpinner"
+                        android:entries="@array/monsterLootArray"
+                        android:background="@android:color/darker_gray"/>
 
                     <TextView
                         android:text="Number of Enemies:"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/genderText"
+                        android:id="@+id/enemyNumText"
                         android:fontFamily="serif"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="16sp"
                         android:layout_marginTop="14dp"
-                        android:layout_below="@+id/classText"
-                        android:layout_alignLeft="@+id/raceText"
-                        android:layout_alignStart="@+id/raceText"
-                        android:layout_toStartOf="@+id/genderSpinner"
-                        android:layout_toLeftOf="@+id/genderSpinner"/>
+                        android:layout_below="@+id/lootText"
+                        android:layout_alignLeft="@+id/enemyTypeText"
+                        android:layout_alignStart="@+id/enemyTypeText"
+                        android:layout_toStartOf="@+id/enemyNumSpinner"
+                        android:layout_toLeftOf="@+id/enemyNumSpinner"/>
 
                     <TextView
                         android:text="Loot:"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/classText"
+                        android:id="@+id/lootText"
                         android:textColor="@color/colorPrimaryDark"
                         android:fontFamily="serif"
                         android:textSize="16sp"
                         android:layout_marginTop="20dp"
-                        android:layout_below="@+id/raceSpinner"
-                        android:layout_alignLeft="@+id/raceText"
-                        android:layout_alignStart="@+id/raceText"/>
+                        android:layout_below="@+id/enemyTypeSpinner"
+                        android:layout_alignLeft="@+id/enemyTypeText"
+                        android:layout_alignStart="@+id/enemyTypeText"/>
 
                     <TextView
                         android:text="Enemy Type:"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/raceText"
+                        android:id="@+id/enemyTypeText"
                         android:textColor="@color/colorPrimaryDark"
                         android:fontFamily="serif"
                         android:textSize="16sp"
                         android:layout_marginTop="19dp"
-                        android:layout_below="@+id/npcNumText"
-                        android:layout_alignLeft="@+id/npcNumText"
-                        android:layout_alignStart="@+id/npcNumText"/>
+                        android:layout_below="@+id/difficultyText"
+                        android:layout_alignLeft="@+id/difficultyText"
+                        android:layout_alignStart="@+id/difficultyText"/>
 
                     <TextView
                         android:text="Difficulty:"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/npcNumText"
+                        android:id="@+id/difficultyText"
                         android:textColor="@color/colorPrimaryDark"
                         android:fontFamily="serif"
                         android:textSize="16sp"
@@ -195,10 +204,10 @@
                         android:backgroundTint="@color/colorPrimaryDark"
                         android:textColor="@android:color/background_light"
                         android:textAlignment="center"
-                        android:onClick="onCombatGenerateClick"
                         android:layout_marginTop="53dp"
-                        android:layout_below="@+id/genderText"
-                        android:layout_centerHorizontal="true"/>
+                        android:layout_below="@+id/enemyNumText"
+                        android:layout_centerHorizontal="true"
+                        android:onClick="onCombatGenerateClick"/>
 
                 </RelativeLayout>
             </ScrollView>

@@ -27,11 +27,11 @@
             <Spinner
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/raceSpinner"
-                android:layout_alignTop="@+id/raceText"
+                android:id="@+id/enemyTypeSpinner"
+                android:layout_alignTop="@+id/enemyTypeText"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignBottom="@+id/raceText"/>
+                android:layout_alignBottom="@+id/enemyTypeText"/>
 
             <TextView
                 android:text="NPC Generator"
@@ -50,63 +50,63 @@
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/genderSpinner"
-                android:layout_alignBottom="@+id/genderText"
-                android:layout_toEndOf="@+id/npcNumText"
-                android:layout_alignLeft="@+id/classSpinner"
-                android:layout_alignStart="@+id/classSpinner"/>
+                android:id="@+id/enemyNumSpinner"
+                android:layout_alignBottom="@+id/enemyNumText"
+                android:layout_toEndOf="@+id/difficultyText"
+                android:layout_alignLeft="@+id/lootSpinner"
+                android:layout_alignStart="@+id/lootSpinner"/>
 
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/classSpinner"
-                android:layout_alignTop="@+id/classText"
+                android:id="@+id/lootSpinner"
+                android:layout_alignTop="@+id/lootText"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/raceSpinner"
-                android:layout_alignStart="@+id/raceSpinner"/>
+                android:layout_alignLeft="@+id/enemyTypeSpinner"
+                android:layout_alignStart="@+id/enemyTypeSpinner"/>
 
             <TextView
                 android:text="Gender:"
                 android:layout_height="wrap_content"
-                android:id="@+id/genderText"
+                android:id="@+id/enemyNumText"
                 android:fontFamily="serif"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"
                 android:layout_marginTop="14dp"
-                android:layout_below="@+id/classText"
-                android:layout_alignLeft="@+id/raceText"
-                android:layout_alignStart="@+id/raceText"
-                android:layout_toStartOf="@+id/genderSpinner"
+                android:layout_below="@+id/lootText"
+                android:layout_alignLeft="@+id/enemyTypeText"
+                android:layout_alignStart="@+id/enemyTypeText"
+                android:layout_toStartOf="@+id/enemyNumSpinner"
                 android:layout_width="wrap_content"
-                android:layout_alignRight="@+id/npcNumText"
-                android:layout_alignEnd="@+id/npcNumText"/>
+                android:layout_alignRight="@+id/difficultyText"
+                android:layout_alignEnd="@+id/difficultyText"/>
 
             <TextView
                 android:text="Class:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/classText"
+                android:id="@+id/lootText"
                 android:textColor="@color/colorPrimaryDark"
                 android:fontFamily="serif"
                 android:textSize="16sp"
                 android:layout_marginTop="20dp"
-                android:layout_below="@+id/raceSpinner"
-                android:layout_alignLeft="@+id/raceText"
-                android:layout_alignStart="@+id/raceText"/>
+                android:layout_below="@+id/enemyTypeSpinner"
+                android:layout_alignLeft="@+id/enemyTypeText"
+                android:layout_alignStart="@+id/enemyTypeText"/>
 
             <TextView
                 android:text="Race:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/raceText"
+                android:id="@+id/enemyTypeText"
                 android:textColor="@color/colorPrimaryDark"
                 android:fontFamily="serif"
                 android:textSize="16sp"
                 android:layout_marginTop="19dp"
-                android:layout_below="@+id/npcNumText"
-                android:layout_alignLeft="@+id/npcNumText"
-                android:layout_alignStart="@+id/npcNumText"/>
+                android:layout_below="@+id/difficultyText"
+                android:layout_alignLeft="@+id/difficultyText"
+                android:layout_alignStart="@+id/difficultyText"/>
 
             <TextView
                 android:text="Alignment:"
@@ -114,9 +114,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:id="@+id/alignmentText"
-                android:layout_below="@+id/genderText"
-                android:layout_alignLeft="@+id/genderText"
-                android:layout_alignStart="@+id/genderText"
+                android:layout_below="@+id/enemyNumText"
+                android:layout_alignLeft="@+id/enemyNumText"
+                android:layout_alignStart="@+id/enemyNumText"
                 android:textColor="@color/colorPrimaryDark"
                 android:fontFamily="serif"
                 android:textSize="16sp"/>
@@ -129,14 +129,14 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@+id/pageTitle"
-                android:layout_alignLeft="@+id/genderSpinner"
-                android:layout_alignStart="@+id/genderSpinner"/>
+                android:layout_alignLeft="@+id/enemyNumSpinner"
+                android:layout_alignStart="@+id/enemyNumSpinner"/>
 
             <TextView
                 android:text="Number of NPCs:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/npcNumText"
+                android:id="@+id/difficultyText"
                 android:textColor="@color/colorPrimaryDark"
                 android:fontFamily="serif"
                 android:textSize="16sp"
@@ -189,7 +189,7 @@
 
     <Spinner
         android:layout_height="wrap_content"
-        android:id="@+id/npcNumSpinner"
+        android:id="@+id/difficultySpinner"
         android:layout_marginTop="106dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"

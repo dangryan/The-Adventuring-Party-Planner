@@ -4,15 +4,20 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class combat_encounter_generator extends AppCompatActivity {
 
     private Spinner mDifficultySpinner;
-    private Spinner mRaceSpinner;
-    private Spinner mThemeSpinner;
-    private Spinner mGenderSpinner;
-
+    private Spinner mEnemyTypeSpinner;
+    private Spinner lootSpinner;
+    private Spinner enemyNumSpinner;
+    private Button generateButton;
 
 
     @Override
@@ -20,25 +25,26 @@ public class combat_encounter_generator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.combat_encounter_generator);
 
-        mDifficultySpinner = (Spinner) findViewById(R.id.npcNumSpinner);
-        mRaceSpinner = (Spinner) findViewById(R.id.raceSpinner);
-        mThemeSpinner = (Spinner) findViewById(R.id.classSpinner);
-        mGenderSpinner = (Spinner) findViewById(R.id.genderSpinner);
+        mDifficultySpinner = (Spinner) findViewById(R.id.difficultySpinner);
+        mEnemyTypeSpinner = (Spinner) findViewById(R.id.enemyTypeSpinner);
+        lootSpinner = (Spinner) findViewById(R.id.lootSpinner);
+        enemyNumSpinner = (Spinner) findViewById(R.id.enemyNumSpinner);
+        generateButton = (Button)findViewById(R.id.generateButton);
     }
 
-    public void onCombatGenerateClick(View v) {
-        Intent intent = new Intent(this, combat_display.class);
+    public void onCombatGenerateClick(View view) {
+        Intent intent = new Intent(combat_encounter_generator.this, combat_display.class);
 
         String difficultyChoice = mDifficultySpinner.getSelectedItem().toString();
-        String raceChoice = mRaceSpinner.getSelectedItem().toString();
-        String themeChoice = mThemeSpinner.getSelectedItem().toString();
-        String genderChoice = mGenderSpinner.getSelectedItem().toString();
+        String enemyTypeChoice = mEnemyTypeSpinner.getSelectedItem().toString();
+        String lootChoice = lootSpinner.getSelectedItem().toString();
+        String enemyNumChoice = enemyNumSpinner.getSelectedItem().toString();
 
 
         intent.putExtra("difficultyChoice", difficultyChoice);
-        intent.putExtra("raceChoice", raceChoice);
-        intent.putExtra("themeChoice", themeChoice);
-        intent.putExtra("genderChoice", genderChoice);
+        intent.putExtra("enemyTypeChoice", enemyTypeChoice);
+        intent.putExtra("lootChoice", lootChoice);
+        intent.putExtra("enemyNumChoice", enemyNumChoice);
 
         startActivity(intent);
     }

@@ -76,8 +76,8 @@
                 android:text="name"
                 android:textColor="@color/colorPrimaryDark"
                 android:fontFamily="serif"
-                android:layout_alignBaseline="@+id/genderText"
-                android:layout_alignBottom="@+id/genderText"
+                android:layout_alignBaseline="@+id/enemyNumText"
+                android:layout_alignBottom="@+id/enemyNumText"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"/>
 
@@ -127,14 +127,14 @@
                 android:text="Hit Points (HP):"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/classText"
+                android:id="@+id/lootText"
                 android:textColor="@color/colorPrimaryDark"
                 android:fontFamily="serif"
                 android:textSize="16sp"
                 android:layout_alignBaseline="@+id/hitPoints_input"
                 android:layout_alignBottom="@+id/hitPoints_input"
-                android:layout_alignLeft="@+id/raceText"
-                android:layout_alignStart="@+id/raceText"/>
+                android:layout_alignLeft="@+id/enemyTypeText"
+                android:layout_alignStart="@+id/enemyTypeText"/>
 
             <TextView
                 android:text="Notes:"
@@ -145,8 +145,8 @@
                 android:textSize="16sp"
                 android:fontFamily="serif"
                 android:layout_below="@+id/hitPoints_input"
-                android:layout_alignLeft="@+id/classText"
-                android:layout_alignStart="@+id/classText"/>
+                android:layout_alignLeft="@+id/lootText"
+                android:layout_alignStart="@+id/lootText"/>
 
             <Button
                 android:text="John Goodman - Level 10"
@@ -167,7 +167,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:id="@+id/genderText"
+                android:id="@+id/enemyNumText"
                 android:fontFamily="serif"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"
@@ -187,14 +187,14 @@
                 android:textSize="16sp"
                 android:layout_alignBaseline="@+id/level_input"
                 android:layout_alignBottom="@+id/level_input"
-                android:layout_alignLeft="@+id/genderText"
-                android:layout_alignStart="@+id/genderText"/>
+                android:layout_alignLeft="@+id/enemyNumText"
+                android:layout_alignStart="@+id/enemyNumText"/>
 
             <TextView
                 android:text="Armor class:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/raceText"
+                android:id="@+id/enemyTypeText"
                 android:textColor="@color/colorPrimaryDark"
                 android:fontFamily="serif"
                 android:textSize="16sp"

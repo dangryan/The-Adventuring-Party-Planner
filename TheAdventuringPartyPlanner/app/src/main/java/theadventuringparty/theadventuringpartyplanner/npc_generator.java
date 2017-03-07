@@ -4,10 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 public class npc_generator extends AppCompatActivity {
 
@@ -25,10 +22,10 @@ public class npc_generator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.combat_encounter_generator);
 
-        mNpcNumSpinner = (Spinner) findViewById(R.id.npcNumSpinner);
-        mRaceSpinner = (Spinner) findViewById(R.id.raceSpinner);
-        mClassSpinner = (Spinner) findViewById(R.id.classSpinner);
-        mGenderSpinner = (Spinner) findViewById(R.id.genderSpinner);
+        mNpcNumSpinner = (Spinner) findViewById(R.id.difficultySpinner);
+        mRaceSpinner = (Spinner) findViewById(R.id.enemyTypeSpinner);
+        mClassSpinner = (Spinner) findViewById(R.id.lootSpinner);
+        mGenderSpinner = (Spinner) findViewById(R.id.enemyNumSpinner);
         mAlignmentSpinner = (Spinner) findViewById(R.id.alignmentSpinner);
         mOccupationSpinner = (Spinner) findViewById(R.id.occupationSpinner);
     }
