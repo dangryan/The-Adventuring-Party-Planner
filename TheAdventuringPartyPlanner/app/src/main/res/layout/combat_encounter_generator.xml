@@ -101,7 +101,8 @@
                         android:layout_toEndOf="@+id/generateButton"
                         android:spinnerMode="dropdown"
                         android:background="@android:color/darker_gray"
-                        android:entries="@array/monsterDifficultyArray"/>
+                        android:entries="@array/monsterDifficultyArray"
+                        />
 
                     <Spinner
                         android:layout_width="match_parent"
