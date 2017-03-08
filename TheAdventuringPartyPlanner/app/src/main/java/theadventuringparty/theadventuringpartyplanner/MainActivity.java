@@ -17,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.combat_encounter_generator);
+        Intent intent = new Intent(this, Main2Activity.class);
+        startActivity(intent);
+        //setContentView(R.layout.combat_encounter_generator);
 
 
 

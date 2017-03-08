@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,8 @@ public class combat_encounter_generator extends AppCompatActivity {
     private Button generateButton;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,8 @@ public class combat_encounter_generator extends AppCompatActivity {
         lootSpinner = (Spinner) findViewById(R.id.lootSpinner);
         enemyNumSpinner = (Spinner) findViewById(R.id.enemyNumSpinner);
         generateButton = (Button)findViewById(R.id.generateButton);
+
+
     }
 
     public void onCombatGenerateClick(View view) {

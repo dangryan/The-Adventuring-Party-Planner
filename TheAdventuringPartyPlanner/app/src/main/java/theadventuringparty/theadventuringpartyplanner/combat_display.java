@@ -22,14 +22,14 @@ public class combat_display extends AppCompatActivity {
         String lootChoice = intent.getStringExtra("lootChoice");
         String enemyNumChoice = intent.getStringExtra("enemyNumChoice");
 
-        diffView = (TextView)findViewById(R.id.difficultyTextView);
-        enemyTypeView = (TextView)findViewById(R.id.enemyTypeTextView);
-        lootView = (TextView)findViewById(R.id.lootTextView);
-        enemyNumView = (TextView)findViewById(R.id.enemyNumTextView);
+        //diffView = (TextView)findViewById(R.id.difficultyTextView);
+        //enemyTypeView = (TextView)findViewById(R.id.enemyTypeTextView);
+        //lootView = (TextView)findViewById(R.id.lootTextView);
+        //enemyNumView = (TextView)findViewById(R.id.enemyNumTextView);
 
-        diffView.setText(diffChoice);
-        enemyTypeView.setText(enemyTypeChoice);
-        lootView.setText(lootChoice);
-        enemyNumView.setText(enemyNumChoice);
+        //diffView.setText(diffChoice);
+        //enemyTypeView.setText(enemyTypeChoice);
+        //lootView.setText(lootChoice);
+        //enemyNumView.setText(enemyNumChoice);
     }
 }
