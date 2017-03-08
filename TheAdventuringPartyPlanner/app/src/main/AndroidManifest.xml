@@ -18,5 +18,6 @@
         </activity>
         <activity android:name=".combat_display"/>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
