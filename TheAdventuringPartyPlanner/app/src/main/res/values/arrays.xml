@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="monsterDifficultyArray">
+        <item>No Selection</item>
         <item>Easy</item>
         <item>Medium</item>
         <item>Hard</item>
     </string-array>
 
     <string-array name="monsterTypeArray">
-        <item>Celestial</item>
-        <item>Aberration</item>
-        <item>Fiend(demon)</item>
-        <item>Undead</item>
+        <item>No Selection</item>
+        <item>elemental</item>
+        <item>undead</item>
+        <item>monstrosity</item>
+        <item>dragon</item>
+        <item>aberration</item>
     </string-array>
 
     <string-array name="monsterLootArray">
+        <item>No Selection</item>
         <item>Low</item>
         <item>Medium</item>
         <item>High</item>
     </string-array>
 
     <string-array name="monsterNumArray">
+        <item>No Selection</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
