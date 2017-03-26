@@ -23,7 +23,7 @@ public class combat_display extends AppCompatActivity {
     private TextView urlView;
     String displayInfo;
     int avPartyLvl = 10;
-    int cr;
+    String cr;
     String monCr;
 
 
@@ -45,25 +45,29 @@ public class combat_display extends AppCompatActivity {
         //urlView.setText(monDiff);
         //urlView.append(monType);
 
+        if (monDiff.equals("No Selection")){
+            cr = "%";
+        }
         if (monDiff.equals("Easy")){
-            cr = 5;
+            cr = "2";
         }
-
         if(monDiff.equals("Medium")){
-            cr = 10;
+            cr = "10";
+        }
+        if (monDiff.equals("Hard")){
+            cr = "15";
         }
 
-        if (monDiff.equals("Hard")){
-            cr = 15;
-        }
+
+
         //urlView.append(Integer.toString(cr));
 
         String spaceVar="%20";
 
-        String url = "http://cgi.soic.indiana.edu/~team39/this.php?cr="+Integer.toString(cr)+"&type="+ monType+","+spaceVar+"monster"+ spaceVar +"manual"
+        String url = "http://cgi.soic.indiana.edu/~team39/this.php?cr="+cr+"&type="+ monType+","+spaceVar+"monster"+ spaceVar +"manual"
                 +"&loot="+monLoot+"&num="+monNum;
 
-        //urlView.append(url);
+        urlView.append(url);
 
         displayOutput(url);
     }

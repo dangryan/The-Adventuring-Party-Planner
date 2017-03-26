@@ -10,7 +10,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
@@ -25,26 +25,26 @@
                 android:textSize="18sp"/>
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:id="@+id/urlTextView"
+                android:textColor="@android:color/background_dark"
+                android:textSize="16sp"
+                android:layout_below="@+id/pageTitle"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
                 android:text="test data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="56dp"
                 android:id="@+id/fightView"
                 android:textSize="18sp"
                 android:textColor="@color/colorPrimaryDark"
-                android:layout_below="@+id/pageTitle"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="66dp"
-                android:id="@+id/urlTextView"
-                android:textColor="@android:color/background_dark"
-                android:textSize="16sp"/>
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
         </RelativeLayout>
     </ScrollView>
 
