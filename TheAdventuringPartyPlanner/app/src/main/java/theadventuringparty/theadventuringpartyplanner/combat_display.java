@@ -34,8 +34,9 @@ public class combat_display extends AppCompatActivity {
         setContentView(R.layout.combat_display);
 
         textView1 = (TextView)findViewById(R.id.fightView);
+
         Intent intent = getIntent();
-<<<<<<< HEAD
+
         String diffChoice = intent.getStringExtra("difficultyChoice");
         String enemyTypeChoice = intent.getStringExtra("enemyTypeChoice");
         String lootChoice = intent.getStringExtra("lootChoice");
@@ -50,7 +51,7 @@ public class combat_display extends AppCompatActivity {
         //enemyTypeView.setText(enemyTypeChoice);
         //lootView.setText(lootChoice);
         //enemyNumView.setText(enemyNumChoice);
-=======
+
         String monDiff = intent.getStringExtra("difficultyChoice");
         String monType = intent.getStringExtra("enemyTypeChoice");
         String monLoot = intent.getStringExtra("lootChoice");
@@ -143,6 +144,5 @@ public class combat_display extends AppCompatActivity {
 
         textView1.setText("");
         textView1.setText(displayInfo);
->>>>>>> f1c9f334480cc0576cf6784abe09ed85398eb4ac
     }
 }

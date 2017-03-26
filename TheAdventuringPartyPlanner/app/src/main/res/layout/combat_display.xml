@@ -5,7 +5,6 @@
                 android:orientation="vertical"
                 android:background="@drawable/paper_background">
 
-<<<<<<< HEAD
     <TextView
         android:text="NAME...."
         android:layout_width="wrap_content"
@@ -226,7 +225,6 @@
         android:layout_toEndOf="@+id/enemyTypeText"
         android:layout_gravity="right"/>
 
-=======
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -271,5 +269,4 @@
         </RelativeLayout>
     </ScrollView>
 
->>>>>>> f1c9f334480cc0576cf6784abe09ed85398eb4ac
 </RelativeLayout>
