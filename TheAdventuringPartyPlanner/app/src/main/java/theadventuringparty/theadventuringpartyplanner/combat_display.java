@@ -19,13 +19,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class combat_display extends AppCompatActivity {
-    private TextView textView1;
-    private TextView urlView;
+    private TextView monster_display_view;
+    //private TextView urlView;
     String displayInfo;
     int avPartyLvl = 10;
     String cr;
     String monCr;
+    String url;
 
+    String fullSize;
 
 
     @Override
@@ -33,14 +35,14 @@ public class combat_display extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.combat_display);
 
-        textView1 = (TextView)findViewById(R.id.fightView);
+        monster_display_view = (TextView)findViewById(R.id.monster_display);
 
         Intent intent = getIntent();
 
-        String diffChoice = intent.getStringExtra("difficultyChoice");
-        String enemyTypeChoice = intent.getStringExtra("enemyTypeChoice");
-        String lootChoice = intent.getStringExtra("lootChoice");
-        String enemyNumChoice = intent.getStringExtra("enemyNumChoice");
+        //String diffChoice = intent.getStringExtra("difficultyChoice");
+        //String enemyTypeChoice = intent.getStringExtra("enemyTypeChoice");
+        //String lootChoice = intent.getStringExtra("lootChoice");
+        //String enemyNumChoice = intent.getStringExtra("enemyNumChoice");
 
         //diffView = (TextView)findViewById(R.id.difficultyTextView);
         //enemyTypeView = (TextView)findViewById(R.id.enemyTypeTextView);
@@ -57,10 +59,6 @@ public class combat_display extends AppCompatActivity {
         String monLoot = intent.getStringExtra("lootChoice");
         String monNum = intent.getStringExtra("enemyNumChoice");
 
-        urlView = (TextView)findViewById(R.id.urlTextView);
-        urlView.setText(" ");
-        //urlView.setText(monDiff);
-        //urlView.append(monType);
 
         if (monDiff.equals("No Selection")){
             cr = "%";
@@ -80,11 +78,20 @@ public class combat_display extends AppCompatActivity {
         //urlView.append(Integer.toString(cr));
 
         String spaceVar="%20";
+        if (monType.equals("No Selection")){
+            monType = "null";
+        }
+        if (monDiff.equals("No Selection")){
+            cr = "null";
+        }
 
-        String url = "http://cgi.soic.indiana.edu/~team39/this.php?cr="+cr+"&type="+ monType+","+spaceVar+"monster"+ spaceVar +"manual"
-                +"&loot="+monLoot+"&num="+monNum;
-
-        urlView.append(url);
+        if (monType.equals("null")){
+            url = "http://cgi.soic.indiana.edu/~team39/this.php?cr="+cr+"&type="+ monType;
+        }
+        else {
+            url = "http://cgi.soic.indiana.edu/~team39/this.php?cr=" + cr + "&type=" + monType + "," + spaceVar + "monster" + spaceVar + "manual";
+        }
+        //urlView.append(url);
 
         displayOutput(url);
     }
@@ -113,13 +120,59 @@ public class combat_display extends AppCompatActivity {
 
                                 // Get the current enemy (json object) data
                                 String size = enemy.getString("size");
+
+                                /*if (size == "T"){
+                                    fullSize = "Tiny";
+                                }
+                                else if (size == "S"){
+                                    fullSize = "Small";
+                                }
+                                else if (size == "M"){
+                                    fullSize = "Medium";
+                                }
+                                else if (size == "L"){
+                                    fullSize = "Large";
+                                }
+                                else if (size == "H"){
+                                    fullSize = "Huge";
+                                }
+                                else if (size == "G"){
+                                    fullSize = "Gigantic";
+                                }*/
+
                                 String name = enemy.getString("name");
                                 String type = enemy.getString("type");
                                 String alignment = enemy.getString("alignment");
                                 String hp = enemy.getString("hp");
 
-                                textView1.append("The party is fighting a "+ alignment +" "+ size +" "
-                                        + name + " with "+ hp + " HP. \n\n");
+                                String speed = enemy.getString("speed");
+                                String ac = enemy.getString("ac");
+                                String str = enemy.getString("str");
+                                String dex = enemy.getString("dex");
+                                String con = enemy.getString("con");
+                                String intel = enemy.getString("intel");
+                                String wis = enemy.getString("wis");
+                                String cha = enemy.getString("cha");
+                                String save = enemy.getString("save");
+                                String skill = enemy.getString("skill");
+
+
+                                monster_display_view.append(name + ": \n" +
+                                        "Alignment: " + alignment + "\n" +
+                                        "Size: " + size + "\n" +
+                                        "Type: " + type + "\n" +
+                                        "Hit points: " + hp + "\n" +
+                                        "Speed: " + speed + "\n" +
+                                        "Armor Class: " + ac + "\n" +
+                                        "STR: " + str + "\n" +
+                                        "DEX: " + dex + "\n" +
+                                        "CON: " + con + "\n" +
+                                        "INT: " + intel + "\n" +
+                                        "WIS: " + wis + "\n" +
+                                        "CHA: " + cha + "\n" +
+                                        "Saves: " + save + "\n" +
+                                        "Skills: " + skill + "\n\n" +
+                                        "_______________________________" + "\n\n");
 
                             }
                                 }catch (JSONException e){
@@ -131,7 +184,7 @@ public class combat_display extends AppCompatActivity {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 // Do something when error occurred
-                                textView1.append("\n No enemies found with those parameters! \n");
+                                monster_display_view.append("\n No enemies found with those parameters! \n");
                             }
                         }
                 );
@@ -142,7 +195,7 @@ public class combat_display extends AppCompatActivity {
         //displayInfo += "";//this is where I will grab the monster name(s);
 
 
-        textView1.setText("");
-        textView1.setText(displayInfo);
+        monster_display_view.setText("");
+        monster_display_view.setText(displayInfo);
     }
 }

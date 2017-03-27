@@ -19,7 +19,7 @@ public class combat_encounter_generator extends AppCompatActivity {
     private Spinner mEnemyTypeSpinner;
     private Spinner lootSpinner;
     private Spinner enemyNumSpinner;
-    private Button generateButton;
+    private Button generatorButton;
 
 
 
@@ -33,13 +33,11 @@ public class combat_encounter_generator extends AppCompatActivity {
         mEnemyTypeSpinner = (Spinner) findViewById(R.id.enemyTypeSpinner);
         lootSpinner = (Spinner) findViewById(R.id.lootSpinner);
         enemyNumSpinner = (Spinner) findViewById(R.id.enemyNumSpinner);
-        generateButton = (Button)findViewById(R.id.generateButton);
-
-
+        generatorButton = (Button)findViewById(R.id.generateButton);
     }
 
-    public void onCombatGenerateClick(View view) {
-        Intent intent = new Intent(combat_encounter_generator.this, combat_display.class);
+    public void combatGenerateClick(View view) {
+        Intent intent = new Intent(this, combat_display.class);
 
         String difficultyChoice = mDifficultySpinner.getSelectedItem().toString();
         String enemyTypeChoice = mEnemyTypeSpinner.getSelectedItem().toString();
@@ -52,7 +50,6 @@ public class combat_encounter_generator extends AppCompatActivity {
         intent.putExtra("lootChoice", lootChoice);
         intent.putExtra("enemyNumChoice", enemyNumChoice);
 
-        //test test test test
         startActivity(intent);
     }
 }

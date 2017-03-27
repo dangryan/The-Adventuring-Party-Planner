@@ -30,21 +30,6 @@ public class MainActivity extends AppCompatActivity {
         generateButton = (Button)findViewById(R.id.generateButton);
     }
 
-    public void onCombatGenerateClick(View view) {
-        Intent intent = new Intent(this, combat_display.class);
 
-        String difficultyChoice = mDifficultySpinner.getSelectedItem().toString();
-        String enemyTypeChoice = mEnemyTypeSpinner.getSelectedItem().toString();
-        String lootChoice = lootSpinner.getSelectedItem().toString();
-        String enemyNumChoice = enemyNumSpinner.getSelectedItem().toString();
-
-
-        intent.putExtra("difficultyChoice", difficultyChoice);
-        intent.putExtra("enemyTypeChoice", enemyTypeChoice);
-        intent.putExtra("lootChoice", lootChoice);
-        intent.putExtra("enemyNumChoice", enemyNumChoice);
-
-        startActivity(intent);
-    }
 }
 

@@ -6,267 +6,35 @@
                 android:background="@drawable/paper_background">
 
     <TextView
-        android:text="NAME...."
+        android:text="Monsters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
-        android:id="@+id/enemyNameText"
-        android:textAppearance="@android:style/TextAppearance.Large"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="normal|bold"
+        android:id="@+id/pageTitle"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="left"
-        android:layout_weight="0.02"/>
-
-    <TextView
-        android:text="Enemy Type, mm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/enemyTypeText"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_marginLeft="39dp"
-        android:layout_marginStart="39dp"
-        android:textStyle="normal|italic"
-        android:layout_alignTop="@+id/enemyNameText"
-        android:layout_toRightOf="@+id/enemyNameText"
-        android:layout_toEndOf="@+id/enemyNameText"
-        android:layout_gravity="right"
-        android:layout_weight="0.02"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Speed:"
-        android:ems="10"
-        android:id="@+id/speedText"
-        android:layout_below="@+id/hpNumText"
-        android:layout_alignLeft="@+id/hpText"
-        android:layout_alignStart="@+id/hpText"
-        android:layout_toStartOf="@+id/hpNumText"
-        android:textSize="16sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_alignRight="@+id/hpNumText"
-        android:layout_alignEnd="@+id/hpNumText" />
-
-    <TextView
-        android:text="20(+4)  "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/dexText"
-        android:textColor="@color/colorAccent"
-        android:textSize="10sp"
-        android:layout_below="@+id/attributesText"
-        android:layout_toRightOf="@+id/strText"
-        android:layout_toEndOf="@+id/strText" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="HP:"
-        android:ems="10"
-        android:id="@+id/hpText"
-        android:textSize="16sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_below="@+id/acNumText"
-        android:layout_alignLeft="@+id/acText"
-        android:layout_alignStart="@+id/acText"
-        android:layout_toLeftOf="@+id/acNumText"
-        android:layout_toStartOf="@+id/acNumText" />
-
-    <TextView
-        android:text="8(+2)   "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/strText"
-        android:textColor="@color/colorAccent"
-        android:textSize="10sp"
-        android:layout_alignBaseline="@+id/dexText"
-        android:layout_alignBottom="@+id/dexText"
-        android:layout_alignLeft="@+id/attributesText"
-        android:layout_alignStart="@+id/attributesText" />
-
-    <TextView
-        android:text="2(+0)  "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/intText"
-        android:textColor="@color/colorAccent"
-        android:textSize="10sp"
-        android:layout_alignBaseline="@+id/conText"
-        android:layout_alignBottom="@+id/conText"
-        android:layout_toRightOf="@+id/conText"
-        android:layout_toEndOf="@+id/conText" />
-
-    <TextView
-        android:text="3(+1)  "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/conText"
-        android:textColor="@color/colorAccent"
-        android:textSize="10sp"
-        android:layout_alignBaseline="@+id/dexText"
-        android:layout_alignBottom="@+id/dexText"
-        android:layout_toRightOf="@+id/dexText"
-        android:layout_toEndOf="@+id/dexText" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="AC:"
-        android:ems="10"
-        android:id="@+id/acText"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        android:layout_alignBaseline="@+id/acNumText"
-        android:layout_alignBottom="@+id/acNumText"
-        android:layout_alignLeft="@+id/enemyNameText"
-        android:layout_alignStart="@+id/enemyNameText"
-        android:layout_toLeftOf="@+id/acNumText"
-        android:layout_toStartOf="@+id/acNumText" />
-
-    <TextView
-        android:text="4(+1)  "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/wisText"
-        android:textColor="@color/colorAccent"
-        android:textSize="10sp"
-        android:layout_alignBaseline="@+id/intText"
-        android:layout_alignBottom="@+id/intText"
-        android:layout_toRightOf="@+id/intText"
-        android:layout_toEndOf="@+id/intText" />
-
-    <TextView
-        android:text="21(+8)"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/chaText"
-        android:textSize="10sp"
-        android:textColor="@color/colorAccent"
-        android:layout_alignBaseline="@+id/wisText"
-        android:layout_alignBottom="@+id/wisText"
-        android:layout_toRightOf="@+id/wisText"
-        android:layout_toEndOf="@+id/wisText" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="STR   DEX   CON   INT   WIS  CHA"
-        android:ems="10"
-        android:id="@+id/attributesText"
-        android:textSize="12sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_below="@+id/enemyTypeText"
-        android:layout_alignLeft="@+id/enemyTypeText"
-        android:layout_alignStart="@+id/enemyTypeText"
-        android:layout_alignRight="@+id/alignmentText"
-        android:layout_alignEnd="@+id/alignmentText"
-        android:layout_gravity="right"/>
-
-    <TextView
-        android:text="13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/acNumText"
-        android:textColor="@color/colorAccent"
-        android:textStyle="normal|italic"
-        android:textSize="16sp"
-        android:layout_below="@+id/enemyNameText"
-        android:layout_toLeftOf="@+id/enemyTypeText"
-        android:layout_toStartOf="@+id/enemyTypeText"
-        android:layout_marginRight="30dp"
-        android:layout_marginEnd="30dp" />
-
-    <TextView
-        android:text="20 ft., swim 40ft."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/speedDescText"
-        android:textSize="14sp"
-        android:textColor="@color/colorAccent"
-        android:textStyle="normal|italic"
-        android:layout_alignBaseline="@+id/speedText"
-        android:layout_alignBottom="@+id/speedText"
-        android:layout_toRightOf="@+id/speedText"
-        android:layout_toEndOf="@+id/speedText" />
-
-    <TextView
-        android:text="303"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/hpNumText"
-        android:textStyle="normal|italic"
-        android:textSize="16sp"
-        android:textColor="@color/colorAccent"
-        android:layout_below="@+id/acText"
-        android:layout_alignRight="@+id/acNumText"
-        android:layout_alignEnd="@+id/acNumText" />
-
-    <TextView
-        android:text="XX"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/alignmentText"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_marginLeft="29dp"
-        android:layout_marginStart="29dp"
-        android:layout_above="@+id/attributesText"
-        android:layout_toRightOf="@+id/enemyTypeText"
-        android:layout_toEndOf="@+id/enemyTypeText"
-        android:layout_gravity="right"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"/>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/pageTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-        <RelativeLayout
+        <TextView
+            android:text="TextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:text="Fight!"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="22dp"
-                android:id="@+id/pageTitle"
-                android:textColor="@android:color/background_dark"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:id="@+id/urlTextView"
-                android:textColor="@android:color/background_dark"
-                android:textSize="16sp"
-                android:layout_below="@+id/pageTitle"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
-
-            <TextView
-                android:text="test data"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/fightView"
-                android:textSize="18sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
-        </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:id="@+id/monster_display"
+            android:layout_marginTop="18dp"
+            android:layout_below="@+id/pageTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"/>
     </ScrollView>
 
 </RelativeLayout>
