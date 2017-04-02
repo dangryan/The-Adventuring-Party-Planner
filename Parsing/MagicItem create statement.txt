@@ -1,3 +1,6 @@
+//Created by Josh Richardson 3/9/17
+
+
 CREATE TABLE MagicItem 
 (
 MIID INT(20) NOT NULL AUTO_INCREMENT,
