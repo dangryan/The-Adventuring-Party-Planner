@@ -2,25 +2,104 @@
 <resources>
     <string-array name="monsterDifficultyArray">
         <item>No Selection</item>
-        <item>Easy</item>
-        <item>Medium</item>
-        <item>Hard</item>
+        <item>0</item>
+        <item>1/8</item>
+        <item>1/4</item>
+        <item>1/2</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
     </string-array>
 
     <string-array name="monsterTypeArray">
         <item>No Selection</item>
-        <item>elemental</item>
-        <item>undead</item>
-        <item>monstrosity</item>
-        <item>dragon</item>
-        <item>aberration</item>
+        <item>Aberration (Shapechanger)</item>
+        <item>Aberration</item>
+        <item>Beast</item>
+        <item>Celestial (Titan)</item>
+        <item>Celestial</item>
+        <item>Construct</item>
+        <item>Dragon</item>
+        <item>Elemental</item>
+        <item>Fey</item>
+        <item>Fiend (Demon)</item>
+        <item>Fiend (Devil)</item>
+        <item>Fiend (Shapechanger)</item>
+        <item>Fiend (Yugoloth)</item>
+        <item>Fiend</item>
+        <item>Giant</item>
+        <item>Humanoid (Aarakocra)</item>
+        <item>Humanoid (Any race)</item>
+        <item>Humanoid (Bullywug)</item>
+        <item>Humanoid (Dwarf)</item>
+        <item>Humanoid (Elf)</item>
+        <item>Humanoid (Gith)</item>
+        <item>Humanoid (Gnoll)</item>
+        <item>Humanoid (Gnome)</item>
+        <item>Humanoid (Goblinoid)</item>
+        <item>Humanoid (Grimlock)</item>
+        <item>Humanoid (Human)</item>
+        <item>Humanoid (Human, Shapechanger)</item>
+        <item>Humanoid (Kenku)</item>
+        <item>Humanoid (Kobold)</item>
+        <item>Humanoid (Kuo-toa)</item>
+        <item>Humanoid (Lizardfolk)</item>
+        <item>Humanoid (Merfolk)</item>
+        <item>Humanoid (Orc)</item>
+        <item>Humanoid (Quaggoth)</item>
+        <item>Humanoid (Sahuagin)</item>
+        <item>Humanoid (Shapechanger)</item>
+        <item>Humanoid (Thri-kreen)</item>
+        <item>Humanoid (Troglodyte)</item>
+        <item>Humanoid (Yuan-Ti)</item>
+        <item>Monstrosity (Shapechanger)</item>
+        <item></item>
+        <item>Monstrosity (Shapechanger, Yuan-Ti)</item>
+        <item>Monstrosity (Titan)</item>
+        <item>Monstrosity</item>
+        <item>Ooze</item>
+        <item>Plant</item>
+        <item>Swarm of Tiny beasts</item>
+        <item>Undead (Shapechanger)</item>
+        <item>Undead</item>
     </string-array>
 
     <string-array name="monsterLootArray">
         <item>No Selection</item>
-        <item>Low</item>
-        <item>Medium</item>
-        <item>High</item>
+        <item>Common</item>
+        <item>Uncommon</item>
+        <item>Rare</item>
+        <item>Very Rare</item>
+        <item>Heroic</item>
+        <item>Legendary</item>
+        <item>Artifact</item>
     </string-array>
 
     <string-array name="monsterNumArray">

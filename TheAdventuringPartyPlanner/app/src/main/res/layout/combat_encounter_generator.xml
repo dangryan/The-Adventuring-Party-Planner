@@ -32,14 +32,14 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="500dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="500dp">
 
                     <Spinner
                         android:layout_width="match_parent"
@@ -70,17 +70,6 @@
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/enemyNumSpinner"
-                        android:layout_alignBottom="@+id/enemyNumText"
-                        android:layout_toEndOf="@+id/difficultyText"
-                        android:layout_alignLeft="@+id/lootSpinner"
-                        android:layout_alignStart="@+id/lootSpinner"
-                        android:entries="@array/monsterNumArray"
-                        android:background="@android:color/darker_gray"/>
-
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:id="@+id/lootSpinner"
                         android:layout_alignTop="@+id/lootText"
                         android:layout_alignParentRight="true"
@@ -89,21 +78,6 @@
                         android:layout_alignStart="@+id/enemyTypeSpinner"
                         android:entries="@array/monsterLootArray"
                         android:background="@android:color/darker_gray"/>
-
-                    <TextView
-                        android:text="Number of Enemies:"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/enemyNumText"
-                        android:fontFamily="serif"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="16sp"
-                        android:layout_marginTop="14dp"
-                        android:layout_below="@+id/lootText"
-                        android:layout_alignLeft="@+id/enemyTypeText"
-                        android:layout_alignStart="@+id/enemyTypeText"
-                        android:layout_toStartOf="@+id/enemyNumSpinner"
-                        android:layout_toLeftOf="@+id/enemyNumSpinner"/>
 
                     <TextView
                         android:text="Loot:"
@@ -165,13 +139,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/generateButton"
-                        android:layout_below="@+id/enemyNumSpinner"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="34dp"
+                        android:layout_marginTop="52dp"
                         android:textColor="@android:color/background_light"
                         android:background="@color/colorPrimaryDark"
                         android:textSize="16sp"
-                        android:onClick="combatGenerateClick"/>
+                        android:onClick="combatGenerateClick"
+                        android:layout_below="@+id/lootText"
+                        android:layout_centerHorizontal="true"/>
 
                 </RelativeLayout>
             </ScrollView>

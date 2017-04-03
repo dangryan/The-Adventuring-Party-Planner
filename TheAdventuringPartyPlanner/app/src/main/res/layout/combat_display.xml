@@ -16,11 +16,34 @@
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"/>
 
+    <TextView
+        android:text="Loot: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lootTitle"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"
+        android:layout_alignBaseline="@+id/loot_display"
+        android:layout_alignBottom="@+id/loot_display"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loot_display"
+        android:layout_marginTop="11dp"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/pageTitle"
+        android:layout_toRightOf="@+id/lootTitle"
+        android:layout_toEndOf="@+id/lootTitle"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:layout_below="@+id/pageTitle"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/lootTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 

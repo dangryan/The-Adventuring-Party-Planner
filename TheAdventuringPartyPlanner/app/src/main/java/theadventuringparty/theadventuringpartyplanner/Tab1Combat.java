@@ -37,12 +37,12 @@ public class Tab1Combat extends Fragment{
                 String difficultyChoice = mDifficultySpinner.getSelectedItem().toString();
                 String enemyTypeChoice = mEnemyTypeSpinner.getSelectedItem().toString();
                 String lootChoice = mLootSpinner.getSelectedItem().toString();
-                String enemyNumChoice = mEnemyNumSpinner.getSelectedItem().toString();
+
+                enemyTypeChoice.toLowerCase();
 
                 intent.putExtra("difficultyChoice", difficultyChoice);
                 intent.putExtra("enemyTypeChoice", enemyTypeChoice);
                 intent.putExtra("lootChoice", lootChoice);
-                intent.putExtra("enemyNumChoice", enemyNumChoice);
 
                 startActivity(intent);
             }

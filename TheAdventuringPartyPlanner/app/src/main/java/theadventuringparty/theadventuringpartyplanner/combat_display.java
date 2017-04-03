@@ -20,14 +20,10 @@ import org.json.JSONObject;
 
 public class combat_display extends AppCompatActivity {
     private TextView monster_display_view;
-    //private TextView urlView;
-    String displayInfo;
-    int avPartyLvl = 10;
+    private TextView loot_display_view;
     String cr;
-    String monCr;
-    String url;
-
-    String fullSize;
+    String monUrl;
+    String lootUrl;
 
 
     @Override
@@ -36,48 +32,35 @@ public class combat_display extends AppCompatActivity {
         setContentView(R.layout.combat_display);
 
         monster_display_view = (TextView)findViewById(R.id.monster_display);
+        loot_display_view = (TextView)findViewById(R.id.loot_display);
 
         Intent intent = getIntent();
-
-        //String diffChoice = intent.getStringExtra("difficultyChoice");
-        //String enemyTypeChoice = intent.getStringExtra("enemyTypeChoice");
-        //String lootChoice = intent.getStringExtra("lootChoice");
-        //String enemyNumChoice = intent.getStringExtra("enemyNumChoice");
-
-        //diffView = (TextView)findViewById(R.id.difficultyTextView);
-        //enemyTypeView = (TextView)findViewById(R.id.enemyTypeTextView);
-        //lootView = (TextView)findViewById(R.id.lootTextView);
-        //enemyNumView = (TextView)findViewById(R.id.enemyNumTextView);
-
-        //diffView.setText(diffChoice);
-        //enemyTypeView.setText(enemyTypeChoice);
-        //lootView.setText(lootChoice);
-        //enemyNumView.setText(enemyNumChoice);
 
         String monDiff = intent.getStringExtra("difficultyChoice");
         String monType = intent.getStringExtra("enemyTypeChoice");
         String monLoot = intent.getStringExtra("lootChoice");
-        String monNum = intent.getStringExtra("enemyNumChoice");
 
 
+        //monDiff is changed here to account for the php results for fractions("1\/8", "1\/4", "1\/2")
         if (monDiff.equals("No Selection")){
             cr = "%";
         }
-        if (monDiff.equals("Easy")){
-            cr = "2";
+        else if (monDiff.equals("1/8")){
+            cr = "1/8";
         }
-        if(monDiff.equals("Medium")){
-            cr = "10";
+        else if (monDiff.equals("1/4")){
+            cr = "1/4";
         }
-        if (monDiff.equals("Hard")){
-            cr = "15";
+        else if (monDiff.equals("1/2")){
+            cr = "1/2";
         }
-
-
-
-        //urlView.append(Integer.toString(cr));
+        else{
+            cr = monDiff;
+        }
 
         String spaceVar="%20";
+
+        //monType and monDiff are both checked here for "No Selection" and if true: monType/monDiff = "null"
         if (monType.equals("No Selection")){
             monType = "null";
         }
@@ -85,15 +68,27 @@ public class combat_display extends AppCompatActivity {
             cr = "null";
         }
 
+
+        //if monType = "null", the url can simply end in "null"
+        //if not, the url must end in monType + ",%20monster%20manual"
         if (monType.equals("null")){
-            url = "http://cgi.soic.indiana.edu/~team39/this.php?cr="+cr+"&type="+ monType;
+            monUrl = "http://cgi.soic.indiana.edu/~team39/this.php?cr="+cr+"&type="+ monType;
         }
         else {
-            url = "http://cgi.soic.indiana.edu/~team39/this.php?cr=" + cr + "&type=" + monType + "," + spaceVar + "monster" + spaceVar + "manual";
+            monUrl = "http://cgi.soic.indiana.edu/~team39/this.php?cr=" + cr + "&type=" + monType.toLowerCase() + "," + spaceVar + "monster" + spaceVar + "manual";
         }
-        //urlView.append(url);
+        displayOutput(monUrl);
 
-        displayOutput(url);
+        if (monLoot.equals("Very Rare")){
+            monLoot = "Very" + spaceVar + "Rare";
+        }
+        if (monLoot.equals("No Selection")){
+            monLoot = "null";
+        }
+
+        lootUrl = "http://cgi.soic.indiana.edu/~team39/loot.php?rarity=" + monLoot;
+
+        displayLootOutput(lootUrl);
     }
     // Initialize a new JsonArrayRequest instance
     public void displayOutput(String url){
@@ -105,7 +100,7 @@ public class combat_display extends AppCompatActivity {
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET,
-                url,
+                monUrl,
                 null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -119,30 +114,11 @@ public class combat_display extends AppCompatActivity {
                                 JSONObject enemy = response.getJSONObject(i);
 
                                 // Get the current enemy (json object) data
-                                String size = enemy.getString("size");
-
-                                /*if (size == "T"){
-                                    fullSize = "Tiny";
-                                }
-                                else if (size == "S"){
-                                    fullSize = "Small";
-                                }
-                                else if (size == "M"){
-                                    fullSize = "Medium";
-                                }
-                                else if (size == "L"){
-                                    fullSize = "Large";
-                                }
-                                else if (size == "H"){
-                                    fullSize = "Huge";
-                                }
-                                else if (size == "G"){
-                                    fullSize = "Gigantic";
-                                }*/
 
                                 String name = enemy.getString("name");
                                 String type = enemy.getString("type");
                                 String alignment = enemy.getString("alignment");
+                                String immune = enemy.getString("immune");
                                 String hp = enemy.getString("hp");
 
                                 String speed = enemy.getString("speed");
@@ -155,23 +131,31 @@ public class combat_display extends AppCompatActivity {
                                 String cha = enemy.getString("cha");
                                 String save = enemy.getString("save");
                                 String skill = enemy.getString("skill");
+                                String senses = enemy.getString("senses");
+                                String languages = enemy.getString("languages");
+                                String spells = enemy.getString("spells");
+                                String resist = enemy.getString("resist");
+                                String traits = enemy.getString("traits");
+                                String actions = enemy.getString("actions");
 
-
-                                monster_display_view.append(name + ": \n" +
+                                monster_display_view.append(
+                                        name + ": \n\n" +
                                         "Alignment: " + alignment + "\n" +
-                                        "Size: " + size + "\n" +
+                                        "Immune: " + immune + "\n" +
                                         "Type: " + type + "\n" +
                                         "Hit points: " + hp + "\n" +
-                                        "Speed: " + speed + "\n" +
-                                        "Armor Class: " + ac + "\n" +
-                                        "STR: " + str + "\n" +
-                                        "DEX: " + dex + "\n" +
-                                        "CON: " + con + "\n" +
-                                        "INT: " + intel + "\n" +
-                                        "WIS: " + wis + "\n" +
-                                        "CHA: " + cha + "\n" +
+                                        "Senses: " + senses + "\n" +
+                                        "Languages: " + languages + "\n" +
+                                        "Resists: " + resist + "\n" +
+                                        "Traits: " + traits + "\n" +
+                                        "Speed: " + speed + "\t\t\t\t\t"  + "Armor Class: " + ac + "\n\n" +
+                                        "STR: " + str + "\t\t\t\t\t" + "DEX: " + dex + "\n" +
+                                        "CON: " + con + "\t\t\t\t\t" + "INT: " + intel + "\n" +
+                                        "WIS: " + wis + "\t\t\t\t\t" + "CHA: " + cha + "\n\n" +
                                         "Saves: " + save + "\n" +
-                                        "Skills: " + skill + "\n\n" +
+                                        "Skills: " + skill + "\n" +
+                                        "Actions: " + actions + "\n" +
+                                        "Spells: " + spells + "\n" +
                                         "_______________________________" + "\n\n");
 
                             }
@@ -190,12 +174,57 @@ public class combat_display extends AppCompatActivity {
                 );
         // Add JsonArrayRequest to the RequestQueue
         requestQueue.add(jsonArrayRequest);
-
-        //displayInfo += "";//this is where I will grab the monster name(s);
-        //displayInfo += "";//this is where I will grab the monster name(s);
-
-
         monster_display_view.setText("");
-        monster_display_view.setText(displayInfo);
+    }
+
+    public void displayLootOutput(String url){
+        Context mContext = getApplicationContext();
+
+
+        // Initialize a new RequestQueue instance
+        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                lootUrl,
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        // Do something with response
+                        // Process the JSON
+                        try{
+                            // Loop through the array elements
+                            for(int i=0;i<response.length();i++){
+                                // Get current json object
+                                JSONObject loot = response.getJSONObject(i);
+
+                                // Get the current enemy (json object) data
+
+                                String name = loot.getString("name");
+                                String weight = loot.getString("type");
+                                String ac = loot.getString("ac");
+
+                                loot_display_view.append(
+                                        name + ":" +"\t\t\t\t" + "AC: " + ac +"\n" +
+                                        "Weight: " + weight);
+                            }
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Do something when error occurred
+                        loot_display_view.append("\n No loot found with those parameters! \n");
+                    }
+                }
+        );
+        // Add JsonArrayRequest to the RequestQueue
+        requestQueue.add(jsonArrayRequest);
+
+        loot_display_view.setText("");
     }
 }
