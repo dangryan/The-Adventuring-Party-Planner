@@ -102,6 +102,16 @@
         <item>Artifact</item>
     </string-array>
 
+    <string-array name="nonCombatEventType">
+        <item>No Selection</item>
+        <item>Dungeon</item>
+        <item>Rumor</item>
+        <item>Stranger</item>
+        <item>Villain</item>
+        <item>Village Task</item>
+        <item>Quest</item>
+    </string-array>
+
     <string-array name="monsterNumArray">
         <item>No Selection</item>
         <item>1</item>

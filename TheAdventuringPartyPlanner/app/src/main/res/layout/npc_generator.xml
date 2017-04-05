@@ -159,7 +159,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="65dp"
                 android:fontFamily="serif"
-                android:onClick="onNpcGenerateClick"/>
+                />
 
             <TextView
                 android:text="Occupation:"

@@ -97,7 +97,7 @@
             <TextView
                 android:text="This is where the motivation will go. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                 android:layout_width="wrap_content"
-                android:id="@+id/textView3"
+                android:id="@+id/nonCombatTextDisplay"
                 android:textColor="@color/colorPrimaryDark"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="26dp"
@@ -122,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView6"
-                android:layout_below="@+id/textView3"
+                android:layout_below="@+id/nonCombatTextDisplay"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="22dp"

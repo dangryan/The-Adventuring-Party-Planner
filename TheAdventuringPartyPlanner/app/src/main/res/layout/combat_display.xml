@@ -39,13 +39,23 @@
         android:layout_toRightOf="@+id/lootTitle"
         android:layout_toEndOf="@+id/lootTitle"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/lootTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/line"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:layout_below="@+id/lootTitle"
+        android:layout_below="@+id/line"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:id="@+id/scrollView">
 
         <TextView
             android:text="TextView"

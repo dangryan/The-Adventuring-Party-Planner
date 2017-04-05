@@ -16,8 +16,6 @@ public class Tab1Combat extends Fragment{
     Spinner mLootSpinner;
     Spinner mEnemyNumSpinner;
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

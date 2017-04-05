@@ -31,7 +31,7 @@ public class npc_generator extends AppCompatActivity {
     }
 
     public void onNpcGenerateClick(View v) {
-        Intent intent = new Intent(this, combat_display.class);
+        /*Intent intent = new Intent(this, combat_display.class);
 
         String NpcNumChoice = mNpcNumSpinner.getSelectedItem().toString();
         String RaceChoice = mRaceSpinner.getSelectedItem().toString();
@@ -49,6 +49,6 @@ public class npc_generator extends AppCompatActivity {
         intent.putExtra("AlignmentChoice", AlignmentChoice);
         intent.putExtra("OccupationChoice", OccupationChoice);
 
-        startActivity(intent);
+        startActivity(intent);*/
     }
 }

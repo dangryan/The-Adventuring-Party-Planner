@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -88,8 +89,10 @@ public class combat_display extends AppCompatActivity {
 
         lootUrl = "http://cgi.soic.indiana.edu/~team39/loot.php?rarity=" + monLoot;
 
+        Toast.makeText(this, "Loading please wait...", Toast.LENGTH_LONG).show();
         displayLootOutput(lootUrl);
     }
+
     // Initialize a new JsonArrayRequest instance
     public void displayOutput(String url){
         Context mContext = getApplicationContext();

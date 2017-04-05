@@ -42,48 +42,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/num_of_npcs_dropdown"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/generateButton"
         android:layout_alignStart="@+id/generateButton"/>
 
-    <Button
-        android:text="Generate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/generateButton"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:textColor="@android:color/background_light"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="serif"
-        android:onClick="onNonCombatGenerateClick"/>
-
-    <TextView
-        android:text="Number of NPCs:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_above="@+id/generateButton"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginBottom="30dp"
-        android:fontFamily="serif"/>
-
 
     <TextView
         android:text="This is where the generated encounter text will go."
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_below="@+id/generateButton"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
         android:layout_marginTop="20dp"
-        android:id="@+id/textView3"
+        android:id="@+id/nonCombatTextDisplay"
         android:layout_alignRight="@+id/pageTitle"
         android:layout_alignEnd="@+id/pageTitle"
         android:textColor="@color/colorPrimaryDark"
-        android:layout_height="150dp"
-        android:fontFamily="serif"/>
+        android:layout_height="match_parent"
+        android:fontFamily="serif"
+        android:layout_alignParentBottom="true"/>
 
     <Spinner
         android:layout_width="match_parent"
@@ -92,5 +70,29 @@
         android:layout_alignTop="@+id/textView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>
+
+    <Spinner
+        android:layout_height="wrap_content"
+        android:id="@+id/eventTypeSpinner"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignRight="@+id/pageTitle"
+        android:layout_alignEnd="@+id/pageTitle"
+        android:layout_alignLeft="@+id/num_of_npcs_dropdown"
+        android:layout_alignStart="@+id/num_of_npcs_dropdown"
+        android:layout_width="50dp"
+        android:entries="@array/nonCombatEventType"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:text="Generate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/generateButton"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@android:color/background_light"
+        android:fontFamily="serif"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/event_dropdown"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
