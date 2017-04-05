@@ -198,19 +198,183 @@ public class combat_display extends AppCompatActivity {
                         // Process the JSON
                         try{
                             // Loop through the array elements
-                            for(int i=0;i<response.length();i++){
+                            for(int i=0;i<response.length();i++) {
                                 // Get current json object
                                 JSONObject loot = response.getJSONObject(i);
 
                                 // Get the current enemy (json object) data
-
+                                String type = loot.getString("type");
                                 String name = loot.getString("name");
                                 String weight = loot.getString("type");
                                 String ac = loot.getString("ac");
+                                String stealth = loot.getString("stealth");
+                                String rarity = loot.getString("rarity");
+                                String strength = loot.getString("strength");
+                                String dmg1 = loot.getString("dmg1");
+                                String dmg2 = loot.getString("dmg2");
+                                String dmgType = loot.getString("dmgType");
+                                String property = loot.getString("property");
+                                //String dmgRange = loot.getString("dmgRange");
 
-                                loot_display_view.append(
-                                        name + ":" +"\t\t\t\t" + "AC: " + ac +"\n" +
-                                        "Weight: " + weight);
+                                //Changing type to the full type name
+                                if (type.equals("A")){
+                                    type = "Ammunition";
+                                }
+                                else if (type.equals("G")){
+                                    type = "General";
+                                }
+                                else if (type.equals("HA")){
+                                    type = "Heavy Armor";
+                                }
+                                else if (type.equals("LA")){
+                                    type = "Light Armor";
+                                }
+                                else if (type.equals("M")){
+                                    type = "Melee Weapon";
+                                }
+                                else if (type.equals("MA")){
+                                    type = "Medium Armor";
+                                }
+                                else if (type.equals("P")){
+                                    type = "Potion";
+                                }
+                                else if (type.equals("R")){
+                                    type = "Ranged Weapon";
+                                }
+                                else if (type.equals("RD")){
+                                    type = "Rod";
+                                }
+                                else if (type.equals("RG")){
+                                    type = "Ring";
+                                }
+                                else if (type.equals("S")){
+                                    type = "Shield";
+                                }
+                                else if (type.equals("SC")){
+                                    type = "Scroll";
+                                }
+                                else if (type.equals("ST")){
+                                    type = "Staff";
+                                }
+                                else if (type.equals("W")){
+                                    type = "Wondrous Item";
+                                }
+                                else if (type.equals("WD")){
+                                    type = "Wand";
+                                }
+
+                                //changing loot dmgType to the full damage type
+                                if (dmgType.equals("B")){
+                                    dmgType = "Bludgeoning";
+                                }
+                                else if (dmgType.equals("P")){
+                                    dmgType = "Piercing";
+                                }
+                                else if (dmgType.equals("S")){
+                                    dmgType = "Slashing";
+                                }
+
+
+                                //TODO FIX THIS PROPERTY OUTPUT
+                                //changing loot property to the full property
+                                String formattedProperty = property.replace("2H","Two-handed");
+                                formattedProperty = formattedProperty.replace("G","General");
+                                formattedProperty = formattedProperty.replace("HA","Heavy Armor");
+                                formattedProperty = formattedProperty.replace("LA","Light Armor");
+                                formattedProperty = formattedProperty.replace("M","Melee Weapon");
+                                formattedProperty = formattedProperty.replace("MA","Medium Armor");
+                                formattedProperty = formattedProperty.replace("P","Potion");
+                                formattedProperty = formattedProperty.replace("R","Ranged Weapon");
+                                formattedProperty = formattedProperty.replace("RD","Rod");
+                                formattedProperty = formattedProperty.replace("RG","Ring");
+                                formattedProperty = formattedProperty.replace("S","Shield");
+                                formattedProperty = formattedProperty.replace("SC","Scroll");
+                                formattedProperty = formattedProperty.replace("ST","Staff");
+                                formattedProperty = formattedProperty.replace("W","Wondrous Item");
+                                formattedProperty = formattedProperty.replace("WD","Wand");
+
+
+                                //appending the correct info to the text for each type of item
+                                if (type.equals("Ammunition")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                }
+                                else if (type.equals("General")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                }
+                                if (type.equals("Heavy Armor")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\n" +
+                                                    "Armor Class: " + ac + "\t\t\t\t" + "Strength: " + strength);
+                                }
+                                if (type.equals("Light Armor")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\n" +
+                                                    "Armor Class: " + ac);
+                                }
+                                if (type.equals("Melee Weapon")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\n" +
+                                                    "Damage 1: " + dmg1 + "\t\t\t\t" + "Damage 2: " + dmg2 + "\t\t\t\t" + dmgType + "\n" +
+                                                    "Property: " + formattedProperty);
+                                }
+                                if (type.equals("Medium Armor")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\t\t\t\t" + "Armor Class: " + ac);
+                                }
+                                if (type.equals("Potion")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                }
+                                if (type.equals("Ranged Weapon")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\t\t\t\t" + dmgType + "\n" +
+                                                    "Property: " + formattedProperty + "\t\t\t\t" //+ "Damage Range: " + dmgRange);
+                                    );}
+                                if (type.equals("Rod")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                }
+                                if (type.equals("Ring")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                }
+                                if (type.equals("Shield")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\t\t\t\t" + "Armor Class: " + ac);
+                                }
+                                if (type.equals("Scroll")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                }
+                                if (type.equals("Staff")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                }
+                                if (type.equals("Wondrous Item")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                }
+                                if (type.equals("Wand")) {
+                                    loot_display_view.append(
+                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                }
                             }
                         }catch (JSONException e){
                             e.printStackTrace();
@@ -227,7 +391,6 @@ public class combat_display extends AppCompatActivity {
         );
         // Add JsonArrayRequest to the RequestQueue
         requestQueue.add(jsonArrayRequest);
-
         loot_display_view.setText("");
     }
 }

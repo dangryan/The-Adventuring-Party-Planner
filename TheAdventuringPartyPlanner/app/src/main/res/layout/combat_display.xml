@@ -37,14 +37,16 @@
         android:textColor="@android:color/background_dark"
         android:layout_below="@+id/pageTitle"
         android:layout_toRightOf="@+id/lootTitle"
-        android:layout_toEndOf="@+id/lootTitle"/>
+        android:layout_toEndOf="@+id/lootTitle"
+        android:layout_marginBottom="2dp"
+        />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/lootTitle"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/loot_display"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/line"/>
