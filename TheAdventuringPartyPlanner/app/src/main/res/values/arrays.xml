@@ -102,6 +102,34 @@
         <item>Artifact</item>
     </string-array>
 
+    <string-array name="npcRaceArray">
+        <item>No Selection</item>
+        <item>Human</item>
+        <item>Elf</item>
+        <item>Dwarf</item>
+        <item>Halfling</item>
+        <item>Gnome</item>
+        <item>Half-Orc</item>
+        <item>Half-Elf</item>
+        <item>Tiefling</item>
+    </string-array>
+
+    <string-array name="npcClassArray">
+        <item>No Selection</item>
+        <item>Barbarian</item>
+        <item>Bard</item>
+        <item>Cleric</item>
+        <item>Druid</item>
+        <item>Fighter</item>
+        <item>Monk</item>
+        <item>Paladin</item>
+        <item>Ranger</item>
+        <item>Rogue</item>
+        <item>Sorcerer</item>
+        <item>Warlock</item>
+        <item>Wizard</item>
+    </string-array>
+
     <string-array name="nonCombatEventType">
         <item>No Selection</item>
         <item>Dungeon</item>

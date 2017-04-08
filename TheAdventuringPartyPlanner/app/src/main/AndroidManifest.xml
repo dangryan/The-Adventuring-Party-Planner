@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".combat_display" />
+        <activity android:name=".npc_display" />
         <activity android:name=".CampaignMotivation"/>
         <activity
             android:name=".Main2Activity"

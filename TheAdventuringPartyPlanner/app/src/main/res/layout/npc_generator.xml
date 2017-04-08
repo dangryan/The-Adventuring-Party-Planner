@@ -24,14 +24,17 @@
             android:layout_width="match_parent"
             android:layout_height="500dp">
 
+
             <Spinner
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:id="@+id/enemyTypeSpinner"
                 android:layout_alignTop="@+id/enemyTypeText"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignBottom="@+id/enemyTypeText"/>
+                android:layout_alignBottom="@+id/enemyTypeText"
+                android:background="@android:color/darker_gray"
+                android:entries="@+array/npcRaceArray"/>
 
             <TextView
                 android:text="NPC Generator"
@@ -47,46 +50,11 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"/>
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/enemyNumSpinner"
-                android:layout_alignBottom="@+id/enemyNumText"
-                android:layout_toEndOf="@+id/difficultyText"
-                android:layout_alignLeft="@+id/lootSpinner"
-                android:layout_alignStart="@+id/lootSpinner"/>
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/lootSpinner"
-                android:layout_alignTop="@+id/lootText"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/enemyTypeSpinner"
-                android:layout_alignStart="@+id/enemyTypeSpinner"/>
-
-            <TextView
-                android:text="Gender:"
-                android:layout_height="wrap_content"
-                android:id="@+id/enemyNumText"
-                android:fontFamily="serif"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="16sp"
-                android:layout_marginTop="14dp"
-                android:layout_below="@+id/lootText"
-                android:layout_alignLeft="@+id/enemyTypeText"
-                android:layout_alignStart="@+id/enemyTypeText"
-                android:layout_toStartOf="@+id/enemyNumSpinner"
-                android:layout_width="wrap_content"
-                android:layout_alignRight="@+id/difficultyText"
-                android:layout_alignEnd="@+id/difficultyText"/>
-
             <TextView
                 android:text="Class:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/lootText"
+                android:id="@+id/numOfEnemiesText"
                 android:textColor="@color/colorPrimaryDark"
                 android:fontFamily="serif"
                 android:textSize="16sp"
@@ -109,30 +77,6 @@
                 android:layout_alignStart="@+id/difficultyText"/>
 
             <TextView
-                android:text="Alignment:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:id="@+id/alignmentText"
-                android:layout_below="@+id/enemyNumText"
-                android:layout_alignLeft="@+id/enemyNumText"
-                android:layout_alignStart="@+id/enemyNumText"
-                android:textColor="@color/colorPrimaryDark"
-                android:fontFamily="serif"
-                android:textSize="16sp"/>
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/alignmentSpinner"
-                android:layout_alignTop="@+id/alignmentText"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_toEndOf="@+id/pageTitle"
-                android:layout_alignLeft="@+id/enemyNumSpinner"
-                android:layout_alignStart="@+id/enemyNumSpinner"/>
-
-            <TextView
                 android:text="Number of NPCs:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -147,6 +91,32 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
 
+            <EditText
+                android:id="@+id/npcNumEditText"
+                android:layout_marginTop="106dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:inputType="number"
+                android:ems="10"
+                android:background="@android:color/darker_gray"
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:maxLength="2"
+                android:hint="(20 max)"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:id="@+id/lootSpinner"
+                android:background="@android:color/darker_gray"
+                android:entries="@+array/npcClassArray"
+                android:layout_alignTop="@+id/numOfEnemiesText"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignLeft="@+id/enemyTypeSpinner"
+                android:layout_alignStart="@+id/enemyTypeSpinner"/>
+
             <Button
                 android:text="Generate"
                 android:layout_width="wrap_content"
@@ -155,45 +125,13 @@
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="@android:color/background_light"
                 android:textAlignment="center"
-                android:layout_below="@+id/alignmentSpinner"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="65dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="serif"
+                android:layout_below="@+id/lootSpinner"
+                android:layout_centerHorizontal="true"
                 />
-
-            <TextView
-                android:text="Occupation:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/alignmentSpinner"
-                android:layout_alignLeft="@+id/alignmentText"
-                android:layout_alignStart="@+id/alignmentText"
-                android:layout_marginTop="16dp"
-                android:id="@+id/occupationText"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="16sp"
-                android:fontFamily="serif"/>
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/occupationSpinner"
-                android:layout_alignBottom="@+id/occupationText"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignLeft="@+id/alignmentSpinner"
-                android:layout_alignStart="@+id/alignmentSpinner"/>
 
         </RelativeLayout>
     </ScrollView>
-
-    <Spinner
-        android:layout_height="wrap_content"
-        android:id="@+id/difficultySpinner"
-        android:layout_marginTop="106dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_width="150dp"/>
 
 </RelativeLayout>

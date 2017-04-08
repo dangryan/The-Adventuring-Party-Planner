@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,13 +20,17 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class combat_display extends AppCompatActivity {
     private TextView monster_display_view;
     private TextView loot_display_view;
     String cr;
     String monUrl;
     String lootUrl;
-
+    String formattedProperty = "";
+    String valuesLength = "null";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,8 @@ public class combat_display extends AppCompatActivity {
         String monDiff = intent.getStringExtra("difficultyChoice");
         String monType = intent.getStringExtra("enemyTypeChoice");
         String monLoot = intent.getStringExtra("lootChoice");
+        String monNum = intent.getStringExtra("enemyNumChoice");
+
 
 
         //monDiff is changed here to account for the php results for fractions("1\/8", "1\/4", "1\/2")
@@ -73,10 +80,10 @@ public class combat_display extends AppCompatActivity {
         //if monType = "null", the url can simply end in "null"
         //if not, the url must end in monType + ",%20monster%20manual"
         if (monType.equals("null")){
-            monUrl = "http://cgi.soic.indiana.edu/~team39/this.php?cr="+cr+"&type="+ monType;
+            monUrl = "http://cgi.soic.indiana.edu/~team39/this.php?cr="+cr+"&type="+ monType+"&num="+monNum;
         }
         else {
-            monUrl = "http://cgi.soic.indiana.edu/~team39/this.php?cr=" + cr + "&type=" + monType.toLowerCase() + "," + spaceVar + "monster" + spaceVar + "manual";
+            monUrl = "http://cgi.soic.indiana.edu/~team39/this.php?cr=" + cr + "&type=" + monType.toLowerCase() + "," + spaceVar + "monster" + spaceVar + "manual" + "&num="+ monNum;
         }
         displayOutput(monUrl);
 
@@ -205,7 +212,7 @@ public class combat_display extends AppCompatActivity {
                                 // Get the current enemy (json object) data
                                 String type = loot.getString("type");
                                 String name = loot.getString("name");
-                                String weight = loot.getString("type");
+                                String weight = loot.getString("weight");
                                 String ac = loot.getString("ac");
                                 String stealth = loot.getString("stealth");
                                 String rarity = loot.getString("rarity");
@@ -215,6 +222,8 @@ public class combat_display extends AppCompatActivity {
                                 String dmgType = loot.getString("dmgType");
                                 String property = loot.getString("property");
                                 //String dmgRange = loot.getString("dmgRange");
+                                Log.i("Property", property);
+
 
                                 //Changing type to the full type name
                                 if (type.equals("A")){
@@ -275,23 +284,72 @@ public class combat_display extends AppCompatActivity {
                                 }
 
 
-                                //TODO FIX THIS PROPERTY OUTPUT
+
                                 //changing loot property to the full property
-                                String formattedProperty = property.replace("2H","Two-handed");
-                                formattedProperty = formattedProperty.replace("G","General");
-                                formattedProperty = formattedProperty.replace("HA","Heavy Armor");
-                                formattedProperty = formattedProperty.replace("LA","Light Armor");
-                                formattedProperty = formattedProperty.replace("M","Melee Weapon");
-                                formattedProperty = formattedProperty.replace("MA","Medium Armor");
-                                formattedProperty = formattedProperty.replace("P","Potion");
-                                formattedProperty = formattedProperty.replace("R","Ranged Weapon");
-                                formattedProperty = formattedProperty.replace("RD","Rod");
-                                formattedProperty = formattedProperty.replace("RG","Ring");
-                                formattedProperty = formattedProperty.replace("S","Shield");
-                                formattedProperty = formattedProperty.replace("SC","Scroll");
-                                formattedProperty = formattedProperty.replace("ST","Staff");
-                                formattedProperty = formattedProperty.replace("W","Wondrous Item");
-                                formattedProperty = formattedProperty.replace("WD","Wand");
+                                if (property != null) {
+
+                                    String[] values = property.split(",");
+                                    Log.d("ArrayList:", Arrays.toString(values));
+
+                                    if (values[0] != null) {
+                                        valuesLength = Integer.toString(values.length);
+                                    }
+
+                                    Log.d("The length of values is" , valuesLength);
+
+                                    for (int x = 0; x < values.length; x++) {
+
+                                        Log.d("x is currently:", Integer.toString(x));
+
+                                        if (values[x].equals("2H")) {
+                                            values[x] = "Two-Handed";
+                                            formattedProperty += values[x];
+                                            Log.d("'Two-Handed' added.", values[x].toString());
+                                        } else if (values[x].equals("A")) {
+                                            values[x] = "Ammunition";
+                                            formattedProperty += values[x];
+                                            Log.d("'Ammunition' added.", values[x].toString());
+                                        } else if (values[x].equals("H")) {
+                                            values[x] = "Heavy";
+                                            formattedProperty += values[x];
+                                            Log.d("'Heavy' added.", values[x].toString());
+                                        } else if (values[x].equals("LD")) {
+                                            values[x] = "Loading";
+                                            formattedProperty += values[x];
+                                            Log.d("'Loading' added.", values[x].toString());
+                                        } else if (values[x].equals("F")) {
+                                            values[x] = "Finesse";
+                                            formattedProperty += values[x];
+                                            Log.d("'Finesse' added.", values[x].toString());
+                                        } else if (values[x].equals("L")) {
+                                            values[x] = "Light";
+                                            formattedProperty += values[x];
+                                            Log.d("'Light' added.", values[x].toString());
+                                        } else if (values[x].equals("T")) {
+                                            values[x] = "Thrown";
+                                            formattedProperty += values[x];
+                                            Log.d("'Thrown' added.", values[x].toString());
+                                        } else if (values[x].equals("R")) {
+                                            values[x] = "Reach";
+                                            formattedProperty += values[x];
+                                            Log.d("'Reach' added.", values[x].toString());
+                                        } else if (values[x].equals("V")) {
+                                            values[x] = "Versatile";
+                                            formattedProperty += values[x];
+                                            Log.d("'Versatile' added.", values[x].toString());
+                                        } else if (values[x].equals("S")) {
+                                            values[x] = "Special";
+                                            formattedProperty += values[x];
+                                            Log.d("'Special' added.", values[x].toString());
+                                        }
+
+                                        if (x + 1 != values.length) {
+                                            if (values[x] != null){
+                                                formattedProperty += ", ";
+                                            }
+                                        }
+                                    }
+                                }
 
 
                                 //appending the correct info to the text for each type of item
@@ -321,7 +379,7 @@ public class combat_display extends AppCompatActivity {
                                     loot_display_view.append(
                                             name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
                                                     "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\n" +
-                                                    "Damage 1: " + dmg1 + "\t\t\t\t" + "Damage 2: " + dmg2 + "\t\t\t\t" + dmgType + "\n" +
+                                                    "Damage 1: " + dmg1 + " (" + dmgType + ")"+ "\t\t\t\t" + "Damage 2: " + dmg2 + "(" + dmgType + ")\n" +
                                                     "Property: " + formattedProperty);
                                 }
                                 if (type.equals("Medium Armor")) {
@@ -337,7 +395,8 @@ public class combat_display extends AppCompatActivity {
                                 if (type.equals("Ranged Weapon")) {
                                     loot_display_view.append(
                                             name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\t\t\t\t" + dmgType + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\n" +
+                                                    "Damage type: " + dmgType + "\n" +
                                                     "Property: " + formattedProperty + "\t\t\t\t" //+ "Damage Range: " + dmgRange);
                                     );}
                                 if (type.equals("Rod")) {
@@ -353,7 +412,8 @@ public class combat_display extends AppCompatActivity {
                                 if (type.equals("Shield")) {
                                     loot_display_view.append(
                                             name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\t\t\t\t" + "Armor Class: " + ac);
+                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\n" +
+                                                    "Armor Class: " + ac);
                                 }
                                 if (type.equals("Scroll")) {
                                     loot_display_view.append(
