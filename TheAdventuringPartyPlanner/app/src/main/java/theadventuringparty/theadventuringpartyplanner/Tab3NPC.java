@@ -19,7 +19,7 @@ public class Tab3NPC extends Fragment{
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.npc_generator, container, false);
 
-        mNpcNumEditText = (EditText)rootView.findViewById(R.id.npcNumEditText);
+        mNpcNumEditText = (EditText)rootView.findViewById(R.id.npcNumEdit);
         mRaceSpinner = (Spinner) rootView.findViewById(R.id.enemyTypeSpinner);
         mClassSpinner = (Spinner) rootView.findViewById(R.id.lootSpinner);
 
@@ -36,11 +36,11 @@ public class Tab3NPC extends Fragment{
                 intent.putExtra("npcRaceChoice", npcRaceChoice);
                 intent.putExtra("classChoice", classChoice);
 
-                if (npcNumChoice != ""){
-                    intent.putExtra("npcNumChoice", npcNumChoice);
+                if (npcNumChoice.equals("")){
+                    intent.putExtra("npcNumChoice", "null");
                 }
                 else{
-                    intent.putExtra("npcNumChoice", "null");
+                    intent.putExtra("npcNumChoice", npcNumChoice);
                 }
 
                 startActivity(intent);

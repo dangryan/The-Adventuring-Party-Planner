@@ -45,11 +45,11 @@ public class Tab1Combat extends Fragment{
                 intent.putExtra("enemyTypeChoice", enemyTypeChoice);
                 intent.putExtra("lootChoice", lootChoice);
 
-                if (enemyNumChoice != ""){
-                    intent.putExtra("enemyNumChoice", enemyNumChoice);
+                if (enemyNumChoice.equals("")){
+                    intent.putExtra("enemyNumChoice", "null");
                 }
                 else{
-                    intent.putExtra("enemyNumChoice", "null");
+                    intent.putExtra("enemyNumChoice", enemyNumChoice);
                 }
 
                 startActivity(intent);

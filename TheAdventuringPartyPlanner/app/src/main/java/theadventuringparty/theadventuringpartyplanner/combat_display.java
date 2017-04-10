@@ -85,7 +85,11 @@ public class combat_display extends AppCompatActivity {
         else {
             monUrl = "http://cgi.soic.indiana.edu/~team39/this.php?cr=" + cr + "&type=" + monType.toLowerCase() + "," + spaceVar + "monster" + spaceVar + "manual" + "&num="+ monNum;
         }
+
+        Log.i("monUrl",monUrl);
+
         displayOutput(monUrl);
+
 
         if (monLoot.equals("Very Rare")){
             monLoot = "Very" + spaceVar + "Rare";
