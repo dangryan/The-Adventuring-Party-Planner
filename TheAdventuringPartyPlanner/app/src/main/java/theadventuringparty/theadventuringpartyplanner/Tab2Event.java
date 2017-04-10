@@ -44,7 +44,7 @@ public class Tab2Event extends Fragment{
 
                 eventUrl = "http://cgi.soic.indiana.edu/~team39/event.php?type=" + eventTypeChoice;
 
-                // Add for loop here to account for different Output functions for each Event Type
+                // Add if here to account for different Output functions for each Event Type
                 if (eventTypeChoice.equals("Dungeon")) {
                     displayDungeonOutput(eventUrl);
                 }
@@ -57,11 +57,11 @@ public class Tab2Event extends Fragment{
                 else if (eventTypeChoice.equals("Villain")) {
                     displayVillainOutput(eventUrl);
                 }
-                else if (eventTypeChoice.equals("VillageTask")) {
-                    displayVillageTaskOutput(eventUrl);
+                else if (eventTypeChoice.equals("Quest")) {
+                    displayQuestOutput(eventUrl);
                 }
                 else {
-                    displayQuestOutput(eventUrl);
+                    displayVillageTaskOutput(eventUrl);
                 }
 
             }
@@ -365,7 +365,7 @@ public class Tab2Event extends Fragment{
                                                 "A peasant runs over to you, shouting:\nYou've got to help! There is a " + subject
                                                         + " who " + problem
                                                         + " at " + location + ". "
-                                                        + "We found" + clue + ", "
+                                                        + "We found " + clue + ", "
                                                         + "Which we suspect involves " + suspect_it_involves + ", "
                                                         + "but the " + impeder
                                                         + " is/are stopping us from " + attempt_to_help + ". "
