@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -46,22 +47,28 @@ public class Tab2Event extends Fragment{
 
                 // Add if here to account for different Output functions for each Event Type
                 if (eventTypeChoice.equals("Dungeon")) {
+                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                     displayDungeonOutput(eventUrl);
                 }
                 else if (eventTypeChoice.equals("Rumor")) {
+                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                     displayRumorOutput(eventUrl);
                 }
                 else if (eventTypeChoice.equals("Stranger")) {
+                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                     displayStrangerOutput(eventUrl);
                 }
                 else if (eventTypeChoice.equals("Villain")) {
+                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                     displayVillainOutput(eventUrl);
                 }
                 else if (eventTypeChoice.equals("Quest")) {
+                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                     displayQuestOutput(eventUrl);
                 }
                 else {
                     displayVillageTaskOutput(eventUrl);
+                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                 }
 
             }
