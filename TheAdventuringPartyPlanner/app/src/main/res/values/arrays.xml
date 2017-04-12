@@ -131,7 +131,6 @@
     </string-array>
 
     <string-array name="nonCombatEventType">
-        <item>No Selection</item>
         <item>Dungeon</item>
         <item>Rumor</item>
         <item>Stranger</item>

@@ -47,28 +47,22 @@ public class Tab2Event extends Fragment{
 
                 // Add if here to account for different Output functions for each Event Type
                 if (eventTypeChoice.equals("Dungeon")) {
-                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                     displayDungeonOutput(eventUrl);
                 }
                 else if (eventTypeChoice.equals("Rumor")) {
-                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                     displayRumorOutput(eventUrl);
                 }
                 else if (eventTypeChoice.equals("Stranger")) {
-                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                     displayStrangerOutput(eventUrl);
                 }
                 else if (eventTypeChoice.equals("Villain")) {
-                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                     displayVillainOutput(eventUrl);
                 }
                 else if (eventTypeChoice.equals("Quest")) {
-                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                     displayQuestOutput(eventUrl);
                 }
                 else {
                     displayVillageTaskOutput(eventUrl);
-                    Toast.makeText(getActivity(),"Loading please wait...", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -237,16 +231,13 @@ public class Tab2Event extends Fragment{
 
 
                                         mEventOutput.append(
-                                                "The stranger is a " + age + " " + sex
+                                                "X is a " + age + " " + sex + " who is " + build
                                                         + " with " + hair_type + " " + hair_color + " " + hair_style
-                                                        + " and " + mark
-                                                        + " , who is living " + home + " " + home_location + ".\n"
-                                                        + "The stranger is " + occupation + ". "
-                                                        + "People in town " + renown + ".\n"
-                                                        + "The stranger is " + build + ". "
-                                                        + "A characteristic feature of the stranger is " + descriptor + ". "
-                                                        + "The stranger talks " + speech + ".\n"
-                                                        + "All the stranger reall wants is to " + motive + ".");
+                                                        + " and " + mark + "."
+                                                        + " X talks " + speech + " and has " + descriptor + "."
+                                                        + " X is " + occupation + " who is living " + home + " " + home_location + "."
+                                                        + " People in town " + renown + " X. "
+                                                        + "All X really wants is to " + motive + ".");
                                     }
                                 }catch (JSONException e){
                                     e.printStackTrace();
@@ -373,7 +364,7 @@ public class Tab2Event extends Fragment{
                                                         + " who " + problem
                                                         + " at " + location + ". "
                                                         + "We found " + clue + ", "
-                                                        + "Which we suspect involves " + suspect_it_involves + ", "
+                                                        + "which we suspect involves " + suspect_it_involves + ", "
                                                         + "but the " + impeder
                                                         + " is/are stopping us from " + attempt_to_help + ". "
                                                         + "Please! If you can help, I'll give you " + reward + ". ");
