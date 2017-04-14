@@ -231,13 +231,13 @@ public class Tab2Event extends Fragment{
 
 
                                         mEventOutput.append(
-                                                "X is a " + age + " " + sex + " who is " + build
+                                                "The stranger is " + age + " " + sex + " who is " + build
                                                         + " with " + hair_type + " " + hair_color + " " + hair_style
                                                         + " and " + mark + "."
-                                                        + " X talks " + speech + " and has " + descriptor + "."
-                                                        + " X is " + occupation + " who is living " + home + " " + home_location + "."
-                                                        + " People in town " + renown + " X. "
-                                                        + "All X really wants is to " + motive + ".");
+                                                        + " (S)he talks " + speech + " and has " + descriptor + "."
+                                                        + " (S)he is " + occupation + " who is living " + home + " " + home_location + "."
+                                                        + " People in town " + renown + " him/her. "
+                                                        + "All (s)he really wants is to " + motive + ".");
                                     }
                                 }catch (JSONException e){
                                     e.printStackTrace();
@@ -297,11 +297,11 @@ public class Tab2Event extends Fragment{
 
                                         mEventOutput.append(
                                                 "The villain started as " + origin + ". "
-                                                        + "(S)he turned " + time_turned + ", " + time_to_turn + ". "
+                                                        + "He turned " + time_turned + ", " + time_to_turn + ". "
                                                         + "The villain turned because " + reason_turned + ".\n"
                                                         + "The villain is a " + race + " with " + unique_trait + ".\n"
                                                         + "The villain's current goal is " + goal + ". "
-                                                        + "(S)he leads through " + leadership_quality + " and his/her minions are " + minions + ".\n"
+                                                        + "He leads through " + leadership_quality + " and his/her minions are " + minions + ".\n"
                                                         + "Despite being a villain, his/her qualities include " + redeeming_quality + ".\n"
                                                         + "The villain will oppose the party " + opposition + ". ");
                                     }
@@ -413,19 +413,19 @@ public class Tab2Event extends Fragment{
 
                                         // Get the current event (json object) data
 
-                                        String location = quest.getString("subject");
-                                        String task = quest.getString("problem");
-                                        String task_focus = quest.getString("location");
-                                        String guarded_by = quest.getString("clue");
-                                        String alertness = quest.getString("suspect_it_involves");
-                                        String time_limit = quest.getString("impeder");
-                                        String twist = quest.getString("attempt_to_help");
-                                        String consequence = quest.getString("reward");
+                                        String location = quest.getString("location");
+                                        String task = quest.getString("task");
+                                        String task_focus = quest.getString("task_focus");
+                                        String guarded_by = quest.getString("guarded_by");
+                                        String alertness = quest.getString("alertness");
+                                        String time_limit = quest.getString("time_limit");
+                                        String twist = quest.getString("twist");
+                                        String consequence = quest.getString("consequence");
 
 
 
                                         mEventOutput.append(
-                                                "The party must infiltrate" + location
+                                                "The party must infiltrate " + location
                                                         + " to " + task + " " + task_focus + ".\n"
                                                         + "The place is guarded by " + guarded_by
                                                         + " who are " + alertness + ".\n"
