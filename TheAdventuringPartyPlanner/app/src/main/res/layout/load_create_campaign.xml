@@ -55,7 +55,7 @@
         android:text='"The Undersea Citadel" - 5 players'
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
+        android:id="@+id/deleteButton"
         android:layout_below="@+id/button2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/generateButton"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/deleteButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:backgroundTint="@color/colorPrimaryDark"
