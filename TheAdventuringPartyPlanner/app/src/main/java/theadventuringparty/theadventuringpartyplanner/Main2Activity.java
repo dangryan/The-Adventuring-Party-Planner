@@ -27,7 +27,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class Main2Activity extends AppCompatActivity {
-
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
     Tab1Combat mTab1Combat = new Tab1Combat();
@@ -43,6 +42,7 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        setTitle("The Adventuring Party Planner");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
