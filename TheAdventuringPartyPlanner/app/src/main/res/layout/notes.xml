@@ -2,107 +2,42 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/character_input"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="theadventuringparty.theadventuringpartyplanner.Main2Activity$PlaceholderFragment"
-    android:foregroundTint="@color/colorPrimary"
+    tools:context="dangryan.notestest.MainActivity"
     android:background="@drawable/paper_background">
 
-    <ScrollView
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Campaign Notes:"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:textColor="@android:color/background_dark"
+        android:id="@+id/pageTitle"/>
+
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
+        android:id="@+id/noteListView"
+        android:layout_below="@+id/pageTitle"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp"
+        android:layout_height="300dp"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="480dp">
-
-            <TextView
-                android:text="Notes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/pageTitle"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
-                android:fontFamily="serif"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:layout_marginTop="26dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"/>
-
-            <Button
-                android:text="What happened last session..."
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button5"
-                android:textColor="@android:color/background_light"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:typeface="serif"
-                android:layout_marginTop="50dp"
-                android:layout_below="@+id/pageTitle"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
-
-            <Button
-                android:text="Our Grand Mission"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button7"
-                android:textColor="@android:color/background_light"
-                android:fontFamily="serif"
-                android:background="@color/colorPrimaryDark"
-                android:layout_below="@+id/button9"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
-
-            <Button
-                android:text="Favorite Loot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button9"
-                android:background="@color/colorPrimaryDark"
-                android:textColor="@android:color/background_light"
-                android:fontFamily="serif"
-                android:layout_below="@+id/button6"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="10dp"/>
-
-            <Button
-                android:text="Acquired Pets"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button6"
-                android:textColor="@android:color/background_light"
-                android:typeface="serif"
-                android:fontFamily="serif"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:layout_below="@+id/button5"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="5dp"/>
-
-            <Button
-                android:text="+"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/button7"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="33dp"
-                android:id="@+id/button10"
-                android:textColor="@android:color/background_light"
-                android:textSize="18sp"
-                android:background="@color/colorPrimaryDark"/>
-
-        </RelativeLayout>
-    </ScrollView>
-
+    <Button
+        android:text="New Note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:layout_below="@+id/noteListView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        style="@style/Widget.AppCompat.Button"
+        android:onClick="onNewNoteButtonClick"/>
 </RelativeLayout>

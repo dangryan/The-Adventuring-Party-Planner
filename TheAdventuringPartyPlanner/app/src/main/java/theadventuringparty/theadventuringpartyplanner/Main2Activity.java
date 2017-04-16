@@ -1,6 +1,8 @@
 package theadventuringparty.theadventuringpartyplanner;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,24 +20,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class Main2Activity extends AppCompatActivity {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
     private ViewPager mViewPager;
+    Tab1Combat mTab1Combat = new Tab1Combat();
+    Tab2Event mTab2Event = new Tab2Event();
+    Tab3NPC mTab3NPC = new Tab3NPC();
+    Tab4Notes mTab4Notes = new Tab4Notes();
+    static private NoteDbHelper mHelper;
+    private ListView mTaskListView;
+    private ArrayAdapter<String> mAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,6 @@ public class Main2Activity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
        }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -82,11 +83,6 @@ public class Main2Activity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -132,4 +128,104 @@ public class Main2Activity extends AppCompatActivity {
             return null;
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        if (mTab1Combat.isVisible() || mTab2Event.isVisible() || mTab3NPC.isVisible() || mTab4Notes.isVisible()) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    public void onNewNoteButtonClick(View v) {
+        Intent intent = new Intent(getApplicationContext(), activity_new_note.class);
+        startActivity(intent);
+    }
+
+    public void editNote(View view) {
+        View parent = (View)view.getParent();
+        TextView noteTextView = (TextView) parent.findViewById(R.id.noteTitleLabel);
+        String noteTitle = noteTextView.getText().toString();
+        mHelper = new NoteDbHelper(getApplicationContext());
+        SQLiteDatabase db = mHelper.getWritableDatabase();
+
+        String table = NoteContract.NoteEntry.TABLE;
+        String[] columns = new String[] { "title", "text"};
+        String selection = NoteContract.NoteEntry.COL_NOTE_TITLE+ "= '" + noteTitle + "'";
+
+
+        Cursor cursor2 = db.query(table, columns, selection,null,null,null,null,null);
+
+        cursor2.moveToFirst();
+
+        String noteTitleText = cursor2.getString(cursor2.getColumnIndex("title"));
+        String noteBodyText = cursor2.getString(cursor2.getColumnIndex("text"));
+
+        db.close();
+
+        Intent intent = new Intent(getApplicationContext(), activity_edit_note.class);
+
+        intent.putExtra("note title", noteTitleText);
+        intent.putExtra("note body text", noteBodyText);
+
+        startActivity(intent);
+    }
+
+    private void updateNoteTitle() {
+        //section to update the Title
+        ArrayList<String> noteNameList = new ArrayList<>();
+        ListView mNoteListView = (ListView)findViewById(R.id.noteListView);
+
+        mHelper = new NoteDbHelper(getApplicationContext());
+        SQLiteDatabase db = mHelper.getReadableDatabase();
+
+        String whereClause = null;
+
+        Cursor cursor = db.query(
+                NoteContract.NoteEntry.TABLE,
+                new String[]{NoteContract.NoteEntry.COL_NOTE_TITLE, NoteContract.NoteEntry.COL_NOTE_TEXT},
+                whereClause,
+                null,
+                null,
+                null,
+                null);
+
+        while (cursor.moveToNext()) {
+            int idx = cursor.getColumnIndex(NoteContract.NoteEntry.COL_NOTE_TITLE);
+            noteNameList.add(cursor.getString(idx));
+        }
+
+        if (mAdapter == null) {
+            mAdapter = new ArrayAdapter<>(getApplicationContext(),
+                    R.layout.note_display_layout,
+                    //adds data to TextView
+                    R.id.noteTitleLabel,
+                    noteNameList);
+            mNoteListView.setAdapter(mAdapter);
+        } else {
+            mAdapter.clear();
+            mAdapter.addAll(noteNameList);
+            mAdapter.notifyDataSetChanged();
+        }
+        cursor.close();
+        db.close();
+    }
+
+    /*public void deleteNote(View view) {
+        View parent = (View) view.getParent();
+        TextView noteTextView = (TextView)parent.findViewById(R.id.noteTitleLabel);
+        String noteTitle = noteTextView.getText().toString();
+
+        mHelper = new NoteDbHelper(getApplicationContext());
+        SQLiteDatabase db = mHelper.getWritableDatabase();
+
+        db.delete(NoteContract.NoteEntry.TABLE,"title = '" + noteTitle + "'",null);
+
+        db.close();
+        updateNoteTitle();
+    }*/
 }

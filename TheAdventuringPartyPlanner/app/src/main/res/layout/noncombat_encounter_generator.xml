@@ -14,6 +14,33 @@
     android:foregroundTint="@color/colorPrimary"
     android:background="@drawable/paper_background">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/generateButton">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="This is where the generated encounter text will go."
+                android:layout_width="match_parent"
+                android:layout_below="@+id/generateButton"
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_alignStart="@+id/textView2"
+                android:layout_marginTop="20dp"
+                android:id="@+id/nonCombatTextDisplay"
+                android:layout_alignRight="@+id/pageTitle"
+                android:layout_alignEnd="@+id/pageTitle"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_height="match_parent"
+                android:fontFamily="serif"
+                android:layout_alignParentBottom="true"/>
+        </LinearLayout>
+    </ScrollView>
+
     <TextView
         android:text="NonCombat Encounter Generator"
         android:layout_width="wrap_content"
@@ -47,21 +74,6 @@
         android:layout_alignLeft="@+id/generateButton"
         android:layout_alignStart="@+id/generateButton"/>
 
-
-    <TextView
-        android:text="This is where the generated encounter text will go."
-        android:layout_width="match_parent"
-        android:layout_below="@+id/generateButton"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="20dp"
-        android:id="@+id/nonCombatTextDisplay"
-        android:layout_alignRight="@+id/pageTitle"
-        android:layout_alignEnd="@+id/pageTitle"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_height="match_parent"
-        android:fontFamily="serif"
-        android:layout_alignParentBottom="true"/>
 
     <Spinner
         android:layout_width="match_parent"

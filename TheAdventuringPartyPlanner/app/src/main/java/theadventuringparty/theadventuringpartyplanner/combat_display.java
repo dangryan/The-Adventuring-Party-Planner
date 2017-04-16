@@ -2,8 +2,14 @@ package theadventuringparty.theadventuringpartyplanner;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.AbsoluteSizeSpan;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -108,7 +114,6 @@ public class combat_display extends AppCompatActivity {
     public void displayOutput(String url){
         Context mContext = getApplicationContext();
 
-
         // Initialize a new RequestQueue instance
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
 
@@ -152,8 +157,31 @@ public class combat_display extends AppCompatActivity {
                                 String traits = enemy.getString("traits");
                                 String actions = enemy.getString("actions");
 
-                                monster_display_view.append(
-                                        name + ": \n\n" +
+                                int nameLength = name.length();
+                                int alignmentLength = alignment.length();
+                                int immuneLength = immune.length();
+                                int typeLength = type.length();
+                                int hpLength = hp.length();
+                                int sensesLength = senses.length();
+                                int languagesLength = languages.length();
+                                int resistLength = resist.length();
+                                int traitsLength = traits.length();
+                                int speedLength = speed.length();
+                                int acLength = ac.length();
+                                int strLength = str.length();
+                                int dexLength = dex.length();
+                                int conLength = con.length();
+                                int intelLength = intel.length();
+                                int wisLength = wis.length();
+                                int chaLength = cha.length();
+                                int saveLength = save.length();
+                                int skillLength = skill.length();
+                                int actionsLength = actions.length();
+                                int spellsLength = spells.length();
+
+
+                                final SpannableStringBuilder monsterString = new SpannableStringBuilder(
+                                        name + ": \n" +
                                         "Alignment: " + alignment + "\n" +
                                         "Immune: " + immune + "\n" +
                                         "Type: " + type + "\n" +
@@ -162,7 +190,8 @@ public class combat_display extends AppCompatActivity {
                                         "Languages: " + languages + "\n" +
                                         "Resists: " + resist + "\n" +
                                         "Traits: " + traits + "\n" +
-                                        "Speed: " + speed + "\t\t\t\t\t"  + "Armor Class: " + ac + "\n\n" +
+                                        "Speed: " + speed + "\n"  +
+                                        "Armor Class: " + ac + "\n\n" +
                                         "STR: " + str + "\t\t\t\t\t" + "DEX: " + dex + "\n" +
                                         "CON: " + con + "\t\t\t\t\t" + "INT: " + intel + "\n" +
                                         "WIS: " + wis + "\t\t\t\t\t" + "CHA: " + cha + "\n\n" +
@@ -171,6 +200,158 @@ public class combat_display extends AppCompatActivity {
                                         "Actions: " + actions + "\n" +
                                         "Spells: " + spells + "\n" +
                                         "_______________________________" + "\n\n");
+
+
+                                //indexes for "Alignment: "
+                                int beginAlignment = nameLength + ": \n".length();
+                                int endAlignment = beginAlignment + "Alignment: ".length();
+
+                                    //set "Alignment:" to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginAlignment, endAlignment,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Immune: "
+                                int beginImmune = endAlignment + alignmentLength + "\n".length();
+                                int endImmune = beginImmune + "Immune: ".length();
+
+                                    //set "Immune:" to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginImmune, endImmune,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Type: "
+                                int beginType = endImmune + immuneLength + "\n".length();
+                                int endType = beginType + "Type: ".length();
+
+                                    //set "Type:" to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginType, endType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Hit points: "
+                                int beginHP = endType + typeLength + "\n".length();
+                                int endHP = beginHP + "Hit points: ".length();
+
+                                    //set "Hit points:" to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginHP, endHP,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Senses: "
+                                int beginSenses = endHP + hpLength + "\n".length();
+                                int endSenses = beginSenses + "Senses: ".length();
+
+                                    //set "Senses:" to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginSenses, endSenses,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Languages: "
+                                int beginLanguages = endSenses + sensesLength + "\n".length();
+                                int endLanguages = beginLanguages + "Languages: ".length();
+
+                                    //set "Languages:" to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginLanguages, endLanguages,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Resists: "
+                                int beginResist = endLanguages + languagesLength + "\n".length();
+                                int endResist = beginResist + "Resists: ".length();
+
+                                    //set "Resists:" to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginResist, endResist,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Traits: "
+                                int beginTraits = endResist + resistLength + "\n".length();
+                                int endTraits = beginTraits + "Traits: ".length();
+
+                                    //set "Traits:" to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginTraits, endTraits,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Speed: "
+                                int beginSpeed = endTraits + traitsLength + "\n".length();
+                                int endSpeed = beginSpeed + "Speed: ".length();
+
+                                    //set "Speed:" to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginSpeed, endSpeed,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Armor Class: "
+                                int beginAc = endSpeed + speedLength + "\n".length();
+                                int endAc = beginAc + "Armor Class: ".length();
+
+                                    //set "Armor Class:" to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginAc, endAc,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "STR:"
+                                int beginStr = endAc + acLength + "\n\n".length();
+                                int endStr = beginStr + "STR: ".length();
+
+                                    //set "STR: " to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginStr, endStr, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "DEX:"
+                                int beginDex = endStr +strLength + "\t\t\t\t\t".length();
+                                int endDex = beginDex + "DEX: ".length();
+
+                                    //set "DEX: " to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginDex, endDex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "CON:"
+                                int beginCon = endDex + dexLength + "\n".length();
+                                int endCon = beginCon + "CON: ".length();
+
+                                    //set "CON: " to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginCon, endCon, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "INT:"
+                                int beginInt = endCon + conLength + "\t\t\t\t\t".length();
+                                int endInt = beginInt + "INT: ".length();
+
+                                    //set "INT: " to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginInt, endInt, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "WIS:"
+                                int beginWis = endInt + intelLength + "\n".length();
+                                int endWis = beginWis + "WIS: ".length();
+
+                                    //set "WIS: " to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginWis, endWis, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "CHA:"
+                                int beginCha = endWis + wisLength + "\t\t\t\t\t".length();
+                                int endCha = beginCha + "CHA: ".length();
+
+                                    //set "CHA: " to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginCha, endCha, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Saves:"
+                                int beginSaves = endCha + chaLength + "\n\n".length();
+                                int endSaves = beginSaves + "Saves: ".length();
+
+                                    //set "Saves: " to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginSaves, endSaves, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Skills:"
+                                int beginSkills = endSaves + saveLength + "\n".length();
+                                int endSkills = beginSkills + "Skills: ".length();
+
+                                    //set "Skills: " to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginSkills, endSkills, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Actions:"
+                                int beginActions = endSkills + skillLength + "\n".length();
+                                int endActions = beginActions + "Actions: ".length();
+
+                                    //set "Actions: " to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginActions, endActions, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //indexes for "Spells:"
+                                int beginSpells = endActions + actionsLength + "\n".length();
+                                int endSpells = beginSpells + "Spells: ".length();
+
+                                    //set "Spells: " to bold
+                                    monsterString.setSpan(new StyleSpan(Typeface.BOLD), beginSpells, endSpells, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+
+                                //set Monster name to bold and size 80
+                                monsterString.setSpan(new StyleSpan(Typeface.BOLD), 0, nameLength, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                monsterString.setSpan(new AbsoluteSizeSpan(80),0, nameLength+1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //sets text to size 50
+                                monsterString.setSpan(new AbsoluteSizeSpan(50),nameLength + 2,monsterString.length(),Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                //appends the string to the output field
+                                monster_display_view.append(monsterString);
 
                             }
                                 }catch (JSONException e){
@@ -182,6 +363,7 @@ public class combat_display extends AppCompatActivity {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 // Do something when error occurred
+                                //monster_display_view.append(error.toString());
                                 monster_display_view.append("\n No enemies found with those parameters! \n");
                             }
                         }
