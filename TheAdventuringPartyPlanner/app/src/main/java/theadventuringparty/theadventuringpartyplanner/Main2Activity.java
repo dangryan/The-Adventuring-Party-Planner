@@ -61,7 +61,6 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -176,5 +175,45 @@ public class Main2Activity extends AppCompatActivity {
         intent.putExtra("note body text", noteBodyText);
 
         startActivity(intent);
+    }
+
+    private void updateNoteTitle() {
+        //section to update the Title
+        ArrayList<String> noteNameList = new ArrayList<>();
+        ListView mNoteListView = (ListView)findViewById(R.id.noteListView);
+
+        mHelper = new NoteDbHelper(getApplicationContext());
+        SQLiteDatabase db = mHelper.getReadableDatabase();
+
+        String whereClause = null;
+
+        Cursor cursor = db.query(
+                NoteContract.NoteEntry.TABLE,
+                new String[]{NoteContract.NoteEntry.COL_NOTE_TITLE, NoteContract.NoteEntry.COL_NOTE_TEXT},
+                whereClause,
+                null,
+                null,
+                null,
+                null);
+
+        while (cursor.moveToNext()) {
+            int idx = cursor.getColumnIndex(NoteContract.NoteEntry.COL_NOTE_TITLE);
+            noteNameList.add(cursor.getString(idx));
+        }
+
+        if (mAdapter == null) {
+            mAdapter = new ArrayAdapter<>(getApplicationContext(),
+                    R.layout.note_display_layout,
+                    //adds data to TextView
+                    R.id.noteTitleLabel,
+                    noteNameList);
+            mNoteListView.setAdapter(mAdapter);
+        } else {
+            mAdapter.clear();
+            mAdapter.addAll(noteNameList);
+            mAdapter.notifyDataSetChanged();
+        }
+        cursor.close();
+        db.close();
     }
 }
