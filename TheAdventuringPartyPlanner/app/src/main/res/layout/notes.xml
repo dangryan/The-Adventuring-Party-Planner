@@ -39,5 +39,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="onNewNoteButtonClick"/>
+        android:onClick="onNewNoteButtonClick"
+        android:background="@color/color_primary_dark2"
+        android:textColor="@android:color/background_light"
+        android:fontFamily="serif"/>
 </RelativeLayout>

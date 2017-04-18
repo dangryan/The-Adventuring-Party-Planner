@@ -25,15 +25,16 @@
         android:textColor="@android:color/background_dark"/>
 
     <Button
-        android:layout_height="wrap_content"
         android:id="@+id/editButton"
         android:onClick="editNote"
-        android:drawableLeft="@android:drawable/ic_menu_edit"
-        android:layout_width="55dp"
         android:drawableTint="@android:color/background_light"
         android:drawableTintMode="src_atop"
-        android:layout_alignParentTop="true"
+        android:background="@color/color_primary_dark2"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:drawableTop="@android:drawable/ic_menu_edit"
+        android:layout_alignTop="@+id/noteTitleLabel"
+        android:layout_width="40dp"
+        android:layout_height="35dp"/>
 
 </RelativeLayout>

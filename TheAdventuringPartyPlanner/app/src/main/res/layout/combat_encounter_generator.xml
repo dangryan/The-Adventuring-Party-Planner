@@ -43,7 +43,7 @@
                         android:layout_alignLeft="@+id/difficultySpinner"
                         android:layout_alignStart="@+id/difficultySpinner"
                         android:entries="@array/monsterTypeArray"
-                        android:background="@android:color/darker_gray"/>
+                        android:background="@color/light_brown"/>
 
                     <Spinner
                         android:layout_height="wrap_content"
@@ -55,9 +55,9 @@
                         android:layout_toRightOf="@+id/generateButton"
                         android:layout_toEndOf="@+id/generateButton"
                         android:spinnerMode="dropdown"
-                        android:background="@android:color/darker_gray"
+                        android:background="@color/light_brown"
                         android:entries="@array/monsterDifficultyArray"
-                        />
+                        style="?attr/spinnerStyle"/>
 
                     <TextView
                         android:text="Enemy Type:"
@@ -125,9 +125,11 @@
                         android:layout_toEndOf="@+id/numOfEnemiesText"
                         android:layout_alignLeft="@+id/enemyTypeSpinner"
                         android:layout_alignStart="@+id/enemyTypeSpinner"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:background="@android:color/darker_gray"
-                        android:maxLength="2"/>
+                        android:textColor="@android:color/background_dark"
+                        android:background="@android:color/background_light"
+                        android:maxLength="2"
+                        android:hint="Enter a number"
+                        android:textColorHint="@android:color/darker_gray"/>
 
                     <Button
                         android:text="Generate"
@@ -135,12 +137,13 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/generateButton"
                         android:textColor="@android:color/background_light"
-                        android:background="@color/colorPrimaryDark"
-                        android:textSize="16sp"
+                        android:background="@color/color_primary_dark2"
+                        android:textSize="14sp"
                         android:onClick="combatGenerateClick"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="78dp"/>
+                        android:layout_marginBottom="78dp"
+                        android:fontFamily="serif"/>
 
                     <TextView
                         android:text="Loot:"
@@ -160,7 +163,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/lootSpinner"
                         android:entries="@array/monsterLootArray"
-                        android:background="@android:color/darker_gray"
+                        android:background="@color/light_brown"
                         android:layout_alignTop="@+id/lootText"
                         android:layout_alignLeft="@+id/numOfEnemyTextEdit"
                         android:layout_alignStart="@+id/numOfEnemyTextEdit"/>

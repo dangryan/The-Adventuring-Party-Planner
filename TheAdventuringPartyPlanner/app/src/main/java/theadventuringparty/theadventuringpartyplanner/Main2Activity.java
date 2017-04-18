@@ -64,6 +64,10 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+            }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main2, menu);
@@ -133,17 +137,6 @@ public class Main2Activity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        if (mTab1Combat.isVisible() || mTab2Event.isVisible() || mTab3NPC.isVisible() || mTab4Notes.isVisible()) {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        } else {
-            super.onBackPressed();
-        }
-    }
 
     public void onNewNoteButtonClick(View v) {
         Intent intent = new Intent(getApplicationContext(), activity_new_note.class);

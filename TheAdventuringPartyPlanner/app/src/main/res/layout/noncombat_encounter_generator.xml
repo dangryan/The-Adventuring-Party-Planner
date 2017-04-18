@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,33 +14,6 @@
     tools:context="theadventuringparty.theadventuringpartyplanner.Main2Activity$PlaceholderFragment"
     android:foregroundTint="@color/colorPrimary"
     android:background="@drawable/paper_background">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/generateButton">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:text="This is where the generated encounter text will go."
-                android:layout_width="match_parent"
-                android:layout_below="@+id/generateButton"
-                android:layout_alignLeft="@+id/textView2"
-                android:layout_alignStart="@+id/textView2"
-                android:layout_marginTop="20dp"
-                android:id="@+id/nonCombatTextDisplay"
-                android:layout_alignRight="@+id/pageTitle"
-                android:layout_alignEnd="@+id/pageTitle"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_height="match_parent"
-                android:fontFamily="serif"
-                android:layout_alignParentBottom="true"/>
-        </LinearLayout>
-    </ScrollView>
 
     <TextView
         android:text="NonCombat Encounter Generator"
@@ -65,46 +39,43 @@
         android:textColor="@color/colorPrimaryDark"
         android:fontFamily="serif"/>
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/num_of_npcs_dropdown"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/generateButton"
-        android:layout_alignStart="@+id/generateButton"/>
-
 
     <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/event_dropdown"
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
-
-    <Spinner
-        android:layout_height="wrap_content"
         android:id="@+id/eventTypeSpinner"
         android:layout_alignBottom="@+id/textView"
         android:layout_alignRight="@+id/pageTitle"
         android:layout_alignEnd="@+id/pageTitle"
-        android:layout_alignLeft="@+id/num_of_npcs_dropdown"
-        android:layout_alignStart="@+id/num_of_npcs_dropdown"
         android:layout_width="50dp"
+        android:background="@color/light_brown"
+        android:layout_alignLeft="@+id/generateButton"
+        android:layout_alignStart="@+id/generateButton"
+        android:layout_height="25dp"
         android:entries="@array/nonCombatEventType"
-        android:background="@android:color/darker_gray"/>
+        android:popupBackground="@color/light_brown"/>
+
+    <TextView
+        android:text="This is where the generated encounter text will go."
+        android:layout_width="match_parent"
+        android:id="@+id/nonCombatTextDisplay"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="serif"
+        android:scrollbars="vertical"
+        android:layout_below="@+id/generateButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp"
+        android:layout_height="200dp"/>
 
     <Button
-        android:text="Generate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/generateButton"
-        android:backgroundTint="@color/colorPrimaryDark"
         android:textColor="@android:color/background_light"
         android:fontFamily="serif"
-        android:layout_marginTop="18dp"
-        android:layout_below="@+id/event_dropdown"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/die"
+        android:backgroundTint="@color/color_primary_dark2"
+        android:layout_below="@+id/eventTypeSpinner"
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

@@ -13,146 +13,41 @@
     android:foregroundTint="@color/colorPrimary"
     android:background="@drawable/paper_background">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <TextView
+        android:text="Campaign Motivation:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:id="@+id/pageTitle"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:fontFamily="serif"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"/>
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/generate_button"
+        android:background="@drawable/die"
+        android:textColor="@android:color/background_light"
+        android:fontFamily="serif"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/nonCombatTextDisplay"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/color_primary_dark2"/>
+
+    <TextView
+        android:text="This is where the motivation will go. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        android:layout_width="wrap_content"
+        android:id="@+id/nonCombatTextDisplay"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="serif"
+        android:layout_below="@+id/pageTitle"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="500dp">
-
-            <TextView
-                android:text="New Campaign:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:id="@+id/pageTitle"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
-                android:fontFamily="serif"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:textAlignment="center"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/editText"
-                android:fontFamily="serif"
-                android:hint="Campaign Name"
-                android:textSize="14sp"
-                android:layout_alignBaseline="@+id/textView"
-                android:layout_alignBottom="@+id/textView"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"/>
-
-            <TextView
-                android:text="Campaign Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="45dp"
-                android:id="@+id/textView"
-                android:textColor="@color/colorPrimaryDark"
-                android:fontFamily="serif"
-                android:layout_below="@+id/pageTitle"
-                />
-
-            <TextView
-                android:text="Motivation:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView4"
-                android:textColor="@color/colorPrimaryDark"
-                android:fontFamily="serif"
-                android:layout_below="@+id/textView2"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="22dp"/>
-
-            <TextView
-                android:text="Environment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView2"
-                android:textColor="@color/colorPrimaryDark"
-                android:fontFamily="serif"
-                android:layout_below="@+id/editText"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="11dp"/>
-
-            <Spinner
-                android:layout_height="wrap_content"
-                android:id="@+id/num_of_npcs_dropdown"
-                android:layout_alignBottom="@+id/textView2"
-                android:layout_alignLeft="@+id/editText"
-                android:layout_alignStart="@+id/editText"
-                android:layout_width="190dp"/>
-
-            <TextView
-                android:text="This is where the motivation will go. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                android:layout_width="wrap_content"
-                android:id="@+id/nonCombatTextDisplay"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="26dp"
-                android:layout_below="@+id/generateButton"
-                android:fontFamily="serif"/>
-
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/generateButton"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="@android:color/background_light"
-                android:layout_alignTop="@+id/textView4"
-                android:background="@drawable/die"
-                android:layout_alignLeft="@+id/num_of_npcs_dropdown"
-                android:layout_alignStart="@+id/num_of_npcs_dropdown"
-                android:layout_alignRight="@+id/generate_button"
-                android:layout_alignEnd="@+id/generate_button"/>
-
-            <TextView
-                android:text="Notes:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView6"
-                android:layout_below="@+id/nonCombatTextDisplay"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="22dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:fontFamily="serif"/>
-
-            <TextView
-                android:text="This is where the notes will go. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView7"
-                android:layout_marginTop="15dp"
-                android:layout_below="@+id/textView6"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:textColor="@color/colorPrimaryDark"
-                android:fontFamily="serif"/>
-
-            <Button
-                android:text="Generate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/generate_button"
-                android:background="@color/colorPrimaryDark"
-                android:textColor="@android:color/background_light"
-                android:layout_below="@+id/textView7"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="19dp"
-                android:fontFamily="serif"/>
-        </RelativeLayout>
-    </ScrollView>
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

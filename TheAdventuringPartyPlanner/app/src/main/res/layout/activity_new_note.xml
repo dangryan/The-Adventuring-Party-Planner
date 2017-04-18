@@ -33,7 +33,10 @@
         android:onClick="onSaveButtonClick"
         android:layout_below="@+id/editNoteBody"
         android:layout_marginTop="29dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@color/color_primary_dark2"
+        android:textColor="@android:color/background_light"/>
 
     <EditText
         android:inputType="textMultiLine"
