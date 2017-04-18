@@ -119,7 +119,7 @@ public class Tab2Event extends Fragment{
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 // Do something when error occurred
-                                mEventOutput.append("\n No loot found with those parameters! \n");
+                                mEventOutput.append("\n Something went wrong. \n");
                             }
                         }
                 );
@@ -180,7 +180,7 @@ public class Tab2Event extends Fragment{
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 // Do something when error occurred
-                                mEventOutput.append("\n No loot found with those parameters! \n");
+                                mEventOutput.append("\n Something went wrong. \n");
                             }
                         }
                 );
@@ -248,7 +248,7 @@ public class Tab2Event extends Fragment{
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 // Do something when error occurred
-                                mEventOutput.append("\n No loot found with those parameters! \n");
+                                mEventOutput.append("\n Something went wrong. \n");
                             }
                         }
                 );
@@ -297,11 +297,11 @@ public class Tab2Event extends Fragment{
 
                                         mEventOutput.append(
                                                 "The villain started as " + origin + ". "
-                                                        + "He turned " + time_turned + ", " + time_to_turn + ". "
+                                                        + "(S)he turned " + time_turned + ", " + time_to_turn + ". "
                                                         + "The villain turned because " + reason_turned + ".\n"
                                                         + "The villain is a " + race + " with " + unique_trait + ".\n"
                                                         + "The villain's current goal is " + goal + ". "
-                                                        + "He leads through " + leadership_quality + " and his/her minions are " + minions + ".\n"
+                                                        + "(S)he leads through " + leadership_quality + " and his/her minions are " + minions + ".\n"
                                                         + "Despite being a villain, his/her qualities include " + redeeming_quality + ".\n"
                                                         + "The villain will oppose the party " + opposition + ". ");
                                     }
@@ -314,7 +314,7 @@ public class Tab2Event extends Fragment{
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 // Do something when error occurred
-                                mEventOutput.append("\n No loot found with those parameters! \n");
+                                mEventOutput.append("\n Something went wrong. \n");
                             }
                         }
                 );
@@ -378,7 +378,7 @@ public class Tab2Event extends Fragment{
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 // Do something when error occurred
-                                mEventOutput.append("\n No loot found with those parameters! \n");
+                                mEventOutput.append("\n Something went wrong. \n");
                             }
                         }
                 );
@@ -442,7 +442,7 @@ public class Tab2Event extends Fragment{
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 // Do something when error occurred
-                                mEventOutput.append("\n No loot found with those parameters! \n");
+                                mEventOutput.append("\n Something went wrong. \n");
                             }
                         }
                 );
