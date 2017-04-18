@@ -90,7 +90,9 @@
         android:layout_marginTop="29dp"
         android:layout_below="@+id/editNoteBody"
         android:layout_toLeftOf="@+id/textView2"
-        android:layout_toStartOf="@+id/textView2"/>
+        android:layout_toStartOf="@+id/textView2"
+        android:textColor="@android:color/background_light"
+        android:background="@color/color_primary_dark2"/>
 
     <Button
         android:text="Delete"
@@ -101,6 +103,8 @@
         android:layout_alignBottom="@+id/buttonSave"
         android:layout_toRightOf="@+id/pageTitle"
         android:layout_toEndOf="@+id/pageTitle"
-        android:onClick="deleteNote"/>
+        android:onClick="deleteNote"
+        android:background="@color/color_primary_dark2"
+        android:textColor="@android:color/background_light"/>
 
 </RelativeLayout>

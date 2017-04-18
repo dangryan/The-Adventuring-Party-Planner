@@ -7,17 +7,48 @@
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/light_brown</item>
         <item name="android:textColorPrimary">@android:color/background_dark</item>
+        <item name="android:textColorPrimaryInverse">@android:color/background_dark</item>
+        <item name="android:textColorSecondary">@android:color/background_dark</item>
+        <item name="android:textColorSecondaryInverse">@android:color/background_dark</item>
     </style>
 
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="ActionBarTheme" parent="AppTheme">
+    <style name="spinner_style" parent="@android:style/Widget.Holo.Spinner">
+        <item name="android:textColor">@android:color/background_dark</item>
+        <item name="android:dropDownSelector">@android:color/background_dark</item>
+        <item name="android:textColorPrimary">@android:color/background_dark</item>
+        <item name="android:textColorPrimaryInverse">@android:color/background_dark</item>
+        <item name="android:textColorSecondary">@android:color/background_dark</item>
+        <item name="android:textColorSecondaryInverse">@android:color/background_dark</item>
+    </style>
+
+
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@android:color/background_dark</item>
+        <item name="android:textColorPrimary">@android:color/background_dark</item>
+        <item name="android:textColorPrimaryInverse">@android:color/background_dark</item>
+        <item name="android:textColorSecondary">@android:color/background_dark</item>
+        <item name="android:textColorSecondaryInverse">@android:color/background_dark</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@android:color/background_dark</item>
+        <item name="android:textColorPrimary">@android:color/background_dark</item>
+        <item name="android:textColorPrimaryInverse">@android:color/background_dark</item>
+        <item name="android:textColorSecondary">@android:color/background_dark</item>
+        <item name="android:textColorSecondaryInverse">@android:color/background_dark</item>
+    </style>
+
+
+<style name="ActionBarTheme" parent="AppTheme">
         <item name="android:textColorPrimary">@android:color/background_light</item>
         <item name="android:textColorPrimaryInverse">@android:color/darker_gray</item>
         <item name="android:textColorSecondary">@android:color/darker_gray</item>
         <item name="android:colorBackground">@android:color/background_dark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
 </resources>

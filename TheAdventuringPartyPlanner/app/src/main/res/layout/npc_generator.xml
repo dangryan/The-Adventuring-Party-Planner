@@ -33,7 +33,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignBottom="@+id/enemyTypeText"
-                android:background="@android:color/darker_gray"
+                android:background="@color/light_brown"
                 android:entries="@+array/npcRaceArray"/>
 
             <TextView
@@ -99,17 +99,20 @@
                 android:layout_alignParentEnd="true"
                 android:inputType="number"
                 android:ems="10"
-                android:background="@android:color/darker_gray"
+                android:background="@android:color/background_light"
                 android:layout_width="150dp"
                 android:layout_height="25dp"
                 android:maxLength="2"
-                android:hint="(20 max)"/>
+                android:hint="(20 max)"
+                android:textColor="@android:color/background_dark"
+                android:textColorLink="@android:color/background_light"
+                android:textColorHint="@android:color/darker_gray"/>
 
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:id="@+id/lootSpinner"
-                android:background="@android:color/darker_gray"
+                android:background="@color/light_brown"
                 android:entries="@+array/npcClassArray"
                 android:layout_alignTop="@+id/numOfEnemiesText"
                 android:layout_alignParentRight="true"
@@ -122,14 +125,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/generateButton"
-                android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="@android:color/background_light"
                 android:textAlignment="center"
                 android:layout_marginTop="30dp"
                 android:fontFamily="serif"
                 android:layout_below="@+id/lootSpinner"
                 android:layout_centerHorizontal="true"
-                />
+                android:background="@color/color_primary_dark2"/>
 
         </RelativeLayout>
     </ScrollView>
