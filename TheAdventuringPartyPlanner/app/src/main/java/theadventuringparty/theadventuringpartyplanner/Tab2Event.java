@@ -1,3 +1,5 @@
+//Created by Josh Richardson 4/7/17
+
 package theadventuringparty.theadventuringpartyplanner;
 
 import android.content.Context;

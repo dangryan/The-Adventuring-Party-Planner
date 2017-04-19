@@ -13,14 +13,14 @@
     android:background="@drawable/paper_background">
 
     <TextView
+        android:id="@+id/pageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Campaign Notes:"
         android:layout_centerHorizontal="true"
-        android:textSize="18sp"
         android:fontFamily="serif"
+        android:text="Campaign Notes"
         android:textColor="@android:color/background_dark"
-        android:id="@+id/pageTitle"/>
+        android:textSize="18sp" />
 
     <ListView
         android:layout_width="match_parent"
