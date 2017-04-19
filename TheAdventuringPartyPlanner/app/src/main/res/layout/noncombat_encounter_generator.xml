@@ -53,18 +53,6 @@
         android:entries="@array/nonCombatEventType"
         android:popupBackground="@color/light_brown"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/campaignMotivationTextView"
-        android:textColor="@color/colorPrimaryDark"
-        android:fontFamily="serif"
-        android:scrollbars="vertical"
-        android:layout_below="@+id/generateButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="14dp"
-        android:layout_height="200dp"/>
-
     <Button
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -76,5 +64,28 @@
         android:backgroundTint="@color/color_primary_dark2"
         android:layout_below="@+id/eventTypeSpinner"
         android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:text="Roll!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/generateButton"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/buttonLabel"
+        android:textSize="12sp"
+        android:fontFamily="serif"
+        android:textColor="@android:color/background_dark"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/campaignMotivationTextView"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="serif"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/buttonLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

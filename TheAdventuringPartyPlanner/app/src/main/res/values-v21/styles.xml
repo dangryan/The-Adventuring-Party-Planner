@@ -21,4 +21,10 @@
         <item name="android:navigationBarColor">@android:color/background_dark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="CustomTheme" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/colorPrimaryDark</item>
+        <item name="android:colorPrimaryDark">@color/color_primary_dark2</item>
+        <item name="android:colorAccent">@color/light_brown</item>
+    </style>
 </resources>
