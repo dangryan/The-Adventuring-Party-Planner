@@ -38,26 +38,12 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/enemyTypeSpinner"
                         android:layout_alignTop="@+id/enemyTypeText"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
                         android:layout_alignLeft="@+id/difficultySpinner"
                         android:layout_alignStart="@+id/difficultySpinner"
                         android:entries="@array/monsterTypeArray"
-                        android:background="@color/light_brown"/>
-
-                    <Spinner
-                        android:layout_height="wrap_content"
-                        android:id="@+id/difficultySpinner"
-                        android:layout_width="200dp"
-                        android:layout_above="@+id/enemyTypeText"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_toRightOf="@+id/generateButton"
-                        android:layout_toEndOf="@+id/generateButton"
-                        android:spinnerMode="dropdown"
                         android:background="@color/light_brown"
-                        android:entries="@array/monsterDifficultyArray"
-                        style="?attr/spinnerStyle"/>
+                        android:layout_alignRight="@+id/difficultySpinner"
+                        android:layout_alignEnd="@+id/difficultySpinner"/>
 
                     <TextView
                         android:text="Enemy Type:"
@@ -122,14 +108,15 @@
                         android:id="@+id/numOfEnemyTextEdit"
                         android:layout_alignBaseline="@+id/numOfEnemiesText"
                         android:layout_alignBottom="@+id/numOfEnemiesText"
-                        android:layout_toEndOf="@+id/numOfEnemiesText"
                         android:layout_alignLeft="@+id/enemyTypeSpinner"
                         android:layout_alignStart="@+id/enemyTypeSpinner"
                         android:textColor="@android:color/background_dark"
                         android:background="@android:color/background_light"
                         android:maxLength="2"
                         android:hint="Enter a number"
-                        android:textColorHint="@android:color/darker_gray"/>
+                        android:textColorHint="@android:color/darker_gray"
+                        android:layout_alignRight="@+id/enemyTypeSpinner"
+                        android:layout_alignEnd="@+id/enemyTypeSpinner"/>
 
                     <Button
                         android:text="Generate"
@@ -166,7 +153,23 @@
                         android:background="@color/light_brown"
                         android:layout_alignTop="@+id/lootText"
                         android:layout_alignLeft="@+id/numOfEnemyTextEdit"
-                        android:layout_alignStart="@+id/numOfEnemyTextEdit"/>
+                        android:layout_alignStart="@+id/numOfEnemyTextEdit"
+                        android:layout_alignRight="@+id/numOfEnemyTextEdit"
+                        android:layout_alignEnd="@+id/numOfEnemyTextEdit"/>
+
+                    <Spinner
+                        android:layout_height="wrap_content"
+                        android:id="@+id/difficultySpinner"
+                        android:spinnerMode="dropdown"
+                        android:background="@color/light_brown"
+                        android:entries="@array/monsterDifficultyArray"
+                        style="?attr/spinnerStyle"
+                        android:layout_marginRight="13dp"
+                        android:layout_marginEnd="13dp"
+                        android:layout_width="150dp"
+                        android:layout_alignBottom="@+id/difficultyText"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"/>
 
                 </RelativeLayout>
             </ScrollView>

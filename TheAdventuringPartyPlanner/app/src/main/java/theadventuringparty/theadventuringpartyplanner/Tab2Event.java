@@ -1,7 +1,6 @@
 package theadventuringparty.theadventuringpartyplanner;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -36,7 +34,7 @@ public class Tab2Event extends Fragment{
 
         mEventTypeSpinner = (Spinner) rootView.findViewById(R.id.eventTypeSpinner);
 
-        mEventOutput = (TextView) rootView.findViewById(R.id.nonCombatTextDisplay);
+        mEventOutput = (TextView) rootView.findViewById(R.id.campaignMotivationTextView);
 
         mEventOutput.setMovementMethod(new ScrollingMovementMethod());
 
