@@ -46,59 +46,59 @@
                         android:layout_alignEnd="@+id/difficultySpinner"/>
 
                     <TextView
-                        android:text="Enemy Type:"
+                        android:id="@+id/enemyTypeText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/enemyTypeText"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:fontFamily="serif"
-                        android:textSize="16sp"
-                        android:layout_marginTop="19dp"
-                        android:layout_below="@+id/difficultyText"
                         android:layout_alignLeft="@+id/difficultyText"
-                        android:layout_alignStart="@+id/difficultyText"/>
+                        android:layout_alignStart="@+id/difficultyText"
+                        android:layout_below="@+id/difficultyText"
+                        android:layout_marginTop="19dp"
+                        android:fontFamily="serif"
+                        android:text="Enemy Type"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
 
                     <TextView
-                        android:text="Combat Rating:"
+                        android:id="@+id/difficultyText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/difficultyText"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:fontFamily="serif"
-                        android:textSize="16sp"
-                        android:layout_marginTop="48dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/pageTitle"
                         android:layout_marginLeft="25dp"
                         android:layout_marginStart="25dp"
-                        android:layout_below="@+id/pageTitle"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"/>
+                        android:layout_marginTop="48dp"
+                        android:fontFamily="serif"
+                        android:text="Combat Rating"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
 
                     <TextView
-                        android:text="Combat Encounter Generator"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/pageTitle"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="20sp"
-                        android:fontFamily="serif"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:layout_marginTop="45dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true"/>
-
-                    <TextView
-                        android:text="Number of Enemies:"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/numOfEnemiesText"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="45dp"
+                        android:layout_weight="1"
                         android:fontFamily="serif"
-                        android:textSize="16sp"
-                        android:layout_below="@+id/enemyTypeText"
+                        android:text="Combat"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/numOfEnemiesText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignLeft="@+id/enemyTypeText"
                         android:layout_alignStart="@+id/enemyTypeText"
-                        android:layout_marginTop="13dp"/>
+                        android:layout_below="@+id/enemyTypeText"
+                        android:layout_marginTop="13dp"
+                        android:fontFamily="serif"
+                        android:text="Number of Enemies"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
 
                     <EditText
                         android:layout_width="wrap_content"
@@ -133,17 +133,17 @@
                         android:fontFamily="serif"/>
 
                     <TextView
-                        android:text="Loot:"
+                        android:id="@+id/lootText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/lootText"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:fontFamily="serif"
-                        android:textSize="16sp"
-                        android:layout_below="@+id/numOfEnemiesText"
                         android:layout_alignLeft="@+id/numOfEnemiesText"
                         android:layout_alignStart="@+id/numOfEnemiesText"
-                        android:layout_marginTop="12dp"/>
+                        android:layout_below="@+id/numOfEnemiesText"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="serif"
+                        android:text="Loot"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
 
                     <Spinner
                         android:layout_width="match_parent"

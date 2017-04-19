@@ -16,28 +16,28 @@
     android:background="@drawable/paper_background">
 
     <TextView
-        android:text="NonCombat Encounter Generator"
+        android:id="@+id/pageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:id="@+id/pageTitle"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:fontFamily="serif"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:fontFamily="serif"
+        android:text="NonCombat Event Generator"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp" />
 
     <TextView
-        android:text="Event Type:"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pageTitle"
         android:layout_alignLeft="@+id/pageTitle"
         android:layout_alignStart="@+id/pageTitle"
+        android:layout_below="@+id/pageTitle"
         android:layout_marginTop="57dp"
-        android:id="@+id/textView"
-        android:textColor="@color/colorPrimaryDark"
-        android:fontFamily="serif"/>
+        android:fontFamily="serif"
+        android:text="Event Type"
+        android:textColor="@color/colorPrimaryDark" />
 
 
     <Spinner
