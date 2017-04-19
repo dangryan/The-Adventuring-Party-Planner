@@ -18,6 +18,7 @@
         android:text="Campaign Notes:"
         android:layout_centerHorizontal="true"
         android:textSize="18sp"
+        android:fontFamily="serif"
         android:textColor="@android:color/background_dark"
         android:id="@+id/pageTitle"/>
 
