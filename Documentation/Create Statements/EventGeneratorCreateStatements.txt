@@ -1,0 +1,88 @@
+#Created by Josh Richardson 3/31/2017
+
+CREATE TABLE Dungeon (
+type VARCHAR(25),
+origin VARCHAR(100),
+location VARCHAR(100),
+occupants VARCHAR(100),
+additional_occupants VARCHAR(100),
+challenge VARCHAR(100),
+loot VARCHAR(100)
+);
+
+CREATE TABLE NPC (
+voice VARCHAR(25),
+accent VARCHAR(25),
+fname_syll_1 VARCHAR(25),
+fname_syll_2 VARCHAR(255),
+lname_syll_1 VARCHAR(25),
+lname_syll_2 VARCHAR(25),
+race VARCHAR(25),
+class VARCHAR(25),
+profession VARCHAR(50)
+);
+
+CREATE TABLE Rumor (
+time VARCHAR(100),
+subject1 VARCHAR(25),
+subject2 VARCHAR(25),
+location VARCHAR(25),
+subject3 VARCHAR(25),
+source VARCHAR(25),
+veracity VARCHAR(25)
+);
+
+CREATE TABLE Stranger (
+age VARCHAR(25),
+sex VARCHAR(50),
+hair_type VARCHAR(50),
+hair_color VARCHAR(50),
+hair_style VARCHAR(100),
+mark VARCHAR(100),
+home VARCHAR(100),
+home_location VARCHAR(100),
+occupation VARCHAR(255),
+renown VARCHAR(50),
+build VARCHAR(100),
+descriptor VARCHAR(255),
+speech VARCHAR(50),
+motive VARCHAR(255)
+);
+
+CREATE TABLE Villain (
+origin VARCHAR(255),
+time_turned VARCHAR(100),
+time_to_turn VARCHAR(100),
+reason_turned VARCHAR(255),
+unique_trait VARCHAR(100),
+goal VARCHAR(255),
+opposition VARCHAR(10),
+race VARCHAR(50),
+leadership_quality VARCHAR(255),
+minions VARCHAR(50),
+redeeming_quality VARCHAR(255)
+);
+
+CREATE TABLE VillageTask (
+subject VARCHAR(100),
+problem VARCHAR(255),
+location VARCHAR(50),
+clue VARCHAR(50),
+suspect_it_involves VARCHAR(50),
+impeder VARCHAR(50),
+attempt_to_help VARCHAR(100),
+reward VARCHAR(100)
+);
+
+
+#for this one, leave out the "and will notice their presence by..." line
+CREATE TABLE Quest (
+location VARCHAR(100),
+task VARCHAR(50),
+task_focus VARCHAR(50),
+guarded_by VARCHAR(50),
+alertness VARCHAR(100),
+time_limit VARCHAR(100),
+twist VARCHAR(255),
+consequence VARCHAR(255)
+);

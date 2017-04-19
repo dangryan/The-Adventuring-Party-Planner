@@ -1,0 +1,47 @@
+INSERT INTO Stranger (motive) 
+VALUES 
+('keep their secret'),
+('run and hide from someone or something'),
+('survive'),
+('taste blood once again'),
+('forget who they are'),
+('brand their foe with a hot iron'),
+('set the world on fire and start over'),
+('silence the voices in their head'),
+("honor a woman's trust"),
+('keep a promise they made'),
+('find something'),
+('hide something'),
+('destroy something'),
+('impress someone in the party'),
+('impress everyone'),
+('build what they see in their dreams'),
+('get revenge'),
+('prepare for the inevitable'),
+('make their creation come alive'),
+('ascend to a higher existence they were promised');
+
+
+
+INSERT INTO Stranger (descriptor)
+VALUES
+('a cane'),
+('a strange jumpy walk'),
+('beautiful clothes'),
+('disgusting clothes'),
+('odd objects hanging from their belt'),
+('a beautiful singing voice'),
+('a habit of crying often'),
+('a love for dancing'),
+('heavy and constant drinking'),
+('a bird on their shoulder'),
+('marks on their wrists left by handcuffs'),
+('a soft, whispery voice'),
+('constant blinking'),
+('constant head scratching'),
+('bleeding wounds'),
+('bandages'),
+('an affection for fire'),
+('pale skin'),
+('a dog'),
+('a cat');
