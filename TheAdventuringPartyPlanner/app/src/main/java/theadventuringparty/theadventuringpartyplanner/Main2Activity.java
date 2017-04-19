@@ -87,6 +87,11 @@ public class Main2Activity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+        if (id == R.id.utilities) {
+            Intent intent = new Intent(this,utilities.class);
+            startActivity(intent);
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }

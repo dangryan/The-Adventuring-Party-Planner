@@ -24,6 +24,8 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity android:name=".activity_edit_note"/>
         <activity android:name=".activity_new_note"/>
+        <activity android:name=".utilities"/>
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

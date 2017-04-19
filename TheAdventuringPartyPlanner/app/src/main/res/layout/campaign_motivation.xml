@@ -33,21 +33,43 @@
         android:background="@drawable/die"
         android:textColor="@android:color/background_light"
         android:fontFamily="serif"
-        android:layout_marginTop="47dp"
-        android:layout_below="@+id/nonCombatTextDisplay"
+        android:backgroundTint="@color/color_primary_dark2"
+        android:onClick="motivationOnClick"
+        android:layout_below="@+id/pageTitle"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/color_primary_dark2"/>
+        android:layout_marginTop="91dp"/>
 
     <TextView
-        android:text="This is where the motivation will go. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        android:layout_width="wrap_content"
-        android:id="@+id/nonCombatTextDisplay"
-        android:textColor="@color/colorPrimaryDark"
+        android:text='A campaign motivation is a "seed" of a story. These motivations are intended to kick start the adventure.'
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:fontFamily="serif"
         android:layout_below="@+id/pageTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:id="@+id/motivationDescription"
+        android:textColor="@android:color/background_dark"
+        android:fontFamily="serif"/>
+
+    <TextView
+        android:text="Roll!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonLabel"
+        android:layout_below="@+id/generate_button"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/background_dark"
+        android:fontFamily="serif"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/campaignMotivationTextView"
+        android:textColor="@android:color/background_dark"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:scrollbars="vertical"
+        android:layout_below="@+id/buttonLabel"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"/>
 
 </RelativeLayout>

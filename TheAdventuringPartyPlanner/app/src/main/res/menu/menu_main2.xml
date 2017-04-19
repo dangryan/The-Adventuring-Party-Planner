@@ -7,4 +7,9 @@
         android:orderInCategory="100"
         android:title="Campaign Motivation"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/utilities"
+        android:orderInCategory="100"
+        android:title="Utilities"
+        app:showAsAction="never" />
 </menu>

@@ -54,9 +54,8 @@
         android:popupBackground="@color/light_brown"/>
 
     <TextView
-        android:text="This is where the generated encounter text will go."
         android:layout_width="match_parent"
-        android:id="@+id/nonCombatTextDisplay"
+        android:id="@+id/campaignMotivationTextView"
         android:textColor="@color/colorPrimaryDark"
         android:fontFamily="serif"
         android:scrollbars="vertical"
