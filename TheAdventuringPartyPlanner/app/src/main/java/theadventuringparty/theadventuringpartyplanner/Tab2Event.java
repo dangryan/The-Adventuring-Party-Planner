@@ -47,9 +47,6 @@ public class Tab2Event extends Fragment{
 
                 String eventTypeChoice = mEventTypeSpinner.getSelectedItem().toString();
 
-                if(eventTypeChoice.equals("Village Task")){
-                    eventTypeChoice = "Village%20Task";}
-
                 eventUrl = "http://cgi.soic.indiana.edu/~team39/event.php?type=" + eventTypeChoice;
 
                 // Add if here to account for different Output functions for each Event Type
