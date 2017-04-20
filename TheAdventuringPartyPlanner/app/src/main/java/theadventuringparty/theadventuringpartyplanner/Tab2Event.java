@@ -74,7 +74,6 @@ public class Tab2Event extends Fragment{
                     displayVillageTaskOutput(eventUrl);
                 }
 
-            }
 
             //You'll have to make one of these for each Event Type (Dungeon, Rumor, Stranger, Villain, VillageTask, Quest)
             public void displayDungeonOutput(String url){
