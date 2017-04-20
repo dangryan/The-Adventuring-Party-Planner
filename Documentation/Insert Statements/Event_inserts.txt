@@ -1,7 +1,10 @@
+#Enemy table
 INSERT INTO Enemy(Category, Name, Size, Type, Alignment, AC, HP, Speed, Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma, StrSave, DexSave, ConSave, IntSave, WisSave, ChaSave, Skills, Vulnerabilities, DamageResistances, DamageImmunities, ConditionImmunities, Senses, Languages, Challenge, Experience, SpecialTraits)
 VALUES (NULL,'Banshee','Medium','undead','CE',12,58,'fly 40 ft. (hover)','1 (-5)','14 (+2)','10 (+0)','12 (+1)','11 (0)','17 (+3)',NULL,NULL,NULL,NULL,2,4,NULL,NULL,'acid, fire, lightning, thunder; bludgeoning, piercing, and slashing from non magical weapons','cold, necrotic, poison',' charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained',' darkvision 60ft., passive Perception 10','Common, Elvish',4,1100,'Detect life, Incorporeal Movement'); 
 
+### Insert statements for event generator ###
 
+#Dungeon
 INSERT INTO Dungeon ([column name here])
 VALUES
 ([value1here]),([value2here]),([value3here]),([value4here]),([value5here]);
@@ -28,7 +31,7 @@ INSERT INTO Dungeon (loot)
 VALUES('weapon of a legendary warrior'),('wand of a famous witch or wizard'),('spellbook of a notorious mage'),('treasure stash of a notable pirate'),('hoard of an old dragon'),('treasury of an ancient dwarvish realm'),('artifacts of an elvish hero'),('relics of a celebrated priest'),('chests of silver carried by a lost ship or caravan'),('crown jewels of a long-dead queen'),('largest diamond found in this part of the world'),('staff of an infamous sorcerer or necromancer');
 
 
-
+#Village Task
 INSERT INTO VillageTask (subject)
 VALUES('monster'),('noble'),('thief'),('guard'),('peasant'),('cow'),('hooded stranger'),('child');
 
@@ -57,6 +60,7 @@ UPDATE Stranger
 SET age = "a teenager"
 WHERE age = "a teenaged";
 
+#Rumor
 INSERT INTO Rumor (time)
 VALUES('a year ago from tonight'),('one night last month'),('twice last month'),('twice last week'),('one day last week'),('one night last week'),('three nights ago'),('the day before yesterday'),('the night before last'),('yesterday morning'),('yesterday afternoon'),('just before sunset'),('after sunset'),('after nightfall'),('before midnight'),('past midnight'),('in the wee hours'),('just before dawn'),('at daybreak'),('earlier today');
 
@@ -78,6 +82,7 @@ VALUES('a shopkeeper'),('a basketweaver'),('a grocer'),('a peddler'),('a beggar'
 INSERT INTO Rumor (veracity)
 VALUES('might be true'),('must be true'),('has to be true'),("can't be true"),('could be true'),('is definitely true'),('may be true'),('is likely true'),('is possibly true'),('is certainly true'),('is absolutely true'),('is probably true'),('is likely partially true'),('is definitely not true'),("can't be entirely false"),("isn't likely false"),("isn't likely entirely false"),('might not be true'),("isn't likely the whole story"),('is probably just gossip');
 
+#Stranger
 INSERT INTO Stranger (age)
 VALUES('a teenager'),('a young adult'),('an adult'),('a middle-aged'),('an older'),('an ancient'),('more dead than living'),('non-aging');
 
@@ -123,7 +128,7 @@ VALUES('keep the secret'),('runaway and hide'),('survive'),('taste it once again
 
 
 
-
+#Quest
 INSERT INTO Quest (location)
 VALUES("a castle"),("a palace"),("a cave"),("a citadel"),("a city"),("a crypt/grave"),("a demiplane"),("an encampment"),("a factory"),("a fortress"),("a gambling hall"),(" a garden"),("a hollow tree"),("a house/manor"),("an island"),("a meteorite cluster"),("a lake"),("a museum"),("a prison"),("a temple/shrine"),("a tomb"),("a tower"),("a vault"),("a zoo"),("a library"),("a nest"),("a gargantuan automaton"),("a cloud"),("a forest"),("a mirror world"),("a hideout");
 
@@ -149,6 +154,7 @@ INSERT INTO Quest (consequence)
 VALUES("banished"),("cursed"),("dead"),("encased in ice"),("subjected to cruel experiments"),("fed to a creature"),("humiliated"),("imprisoned"),("mind wiped"),("mutated"),("questioned"),("forced to repeat their training exercises"),("replaced"),("sent back in time"),("sent to a demiplane"),("sent to the future"),("set in an elaborate slow death trap"),("silenced"),("tortured"),("turned into a tree/stone");
 
 
+#Java for Tabs
 /////tab activity java
  /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
