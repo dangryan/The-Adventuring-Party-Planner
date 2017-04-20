@@ -37,6 +37,7 @@ public class combat_display extends AppCompatActivity {
     String lootUrl;
     String formattedProperty = "";
     String valuesLength = "null";
+    SpannableStringBuilder lootDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -538,88 +539,556 @@ public class combat_display extends AppCompatActivity {
                                 }
 
 
+                                int lootTypeLength = type.length();
+                                int lootNameLength = name.length();
+                                int lootWeightLength = weight.length();
+                                int lootAcLength = ac.length();
+                                int lootStealthLength = stealth.length();
+                                int lootRarityLength = rarity.length();
+                                int lootStrengthLength = strength.length();
+                                int lootDmg1Length = dmg1.length();
+                                int lootDmg2Length = dmg2.length();
+                                int lootDmgTypeLength = dmgType.length();
+                                int lootPropertyLength = property.length();
+
                                 //appending the correct info to the text for each type of item
-                                if (type.equals("Ammunition")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                if (type.equals("Ammunition")){
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder( name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 else if (type.equals("General")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder(name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 if (type.equals("Heavy Armor")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\n" +
-                                                    "Armor Class: " + ac + "\t\t\t\t" + "Strength: " + strength);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder(name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity + "\n" +
+                                            "Armor Class: " + ac + "\t\t\t\t" + "Strength: " + strength);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+                                    //indexes for "Armor Class"
+                                    int beginLootAC = endLootRarity + ": ".length() + lootRarityLength + "\n".length();
+                                    int endLootAC = beginLootAC + "Armor Class".length();
+                                    //indexes for "Strength"
+                                    int beginLootStrength = endLootAC + ": ".length() + lootAcLength + "\t\t\t\t".length();
+                                    int endLootStrength = beginLootStrength + "Strength".length();
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Armor class" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootAC, endLootAC,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Strength" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStrength, endLootStrength,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 if (type.equals("Light Armor")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\n" +
-                                                    "Armor Class: " + ac);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder(name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity + "\n" +
+                                            "Armor Class: " + ac);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+                                    //indexes for "Armor Class"
+                                    int beginLootAC = endLootRarity + ": ".length() + lootRarityLength + "\n".length();
+                                    int endLootAC = beginLootAC + "Armor Class".length();
+
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Armor class" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootAC, endLootAC,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 if (type.equals("Melee Weapon")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\n" +
-                                                    "Damage 1: " + dmg1 + " (" + dmgType + ")"+ "\t\t\t\t" + "Damage 2: " + dmg2 + "(" + dmgType + ")\n" +
-                                                    "Property: " + formattedProperty);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder(
+                                            name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity + "\n" +
+                                            "Damage 1: " + dmg1 + " (" + dmgType + ")"+ "\t\t\t\t" + "Damage 2: " + dmg2 + "(" + dmgType + ")\n" +
+                                            "Property: " + formattedProperty);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+                                    //indexes for "Damage 1"
+                                    int beginLootDmg1 = endLootRarity + ": ".length() + lootRarityLength + "\n".length();
+                                    int endLootDmg1 = beginLootDmg1 + "Damage 1".length();
+                                    //indexes for "Damage 2"
+                                    int beginLootDmg2 = endLootDmg1 + ": ".length() + lootDmg1Length + " (".length() + lootDmgTypeLength + ")".length()+ "\t\t\t\t".length();
+                                    int endLootDmg2 = beginLootDmg2 + "Damage 2".length();
+                                    //indexes for "Property"
+                                    int beginLootProperty = endLootDmg2 + ": ".length() + lootDmg2Length + "(".length() + lootDmgTypeLength + ")\n".length();
+                                    int endLootProperty = beginLootProperty + "Property".length();
+
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Damage 1" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootDmg1, endLootDmg1,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Damage 2" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootDmg2, endLootDmg2,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Property" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootProperty, endLootProperty,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 if (type.equals("Medium Armor")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\t\t\t\t" + "Armor Class: " + ac);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder(name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity + "\n" +
+                                            "Armor Class: " + ac);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+                                    //indexes for "Armor Class"
+                                    int beginLootAC = endLootRarity + ": ".length() + lootRarityLength + "\n".length();
+                                    int endLootAC = beginLootAC + "Armor Class".length();
+
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Armor class" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootAC, endLootAC,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 if (type.equals("Potion")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder( name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 if (type.equals("Ranged Weapon")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\n" +
-                                                    "Damage type: " + dmgType + "\n" +
-                                                    "Property: " + formattedProperty + "\t\t\t\t" //+ "Damage Range: " + dmgRange);
-                                    );}
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder(name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity + "\n" +
+                                            "Damage type: " + dmgType + "\n" +
+                                            "Property: " + formattedProperty + "\t\t\t\t");
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+                                    //indexes for "Damage Type"
+                                    int beginLootDmgType = endLootRarity + ": ".length() + lootRarityLength + "\n".length();
+                                    int endLootDmgType = beginLootDmgType + "Damage type".length();
+                                    //indexes for "Property"
+                                    int beginLootProperty = endLootDmgType + ": ".length() + lootDmgTypeLength + "\n".length();
+                                    int endLootProperty = beginLootProperty + "Property".length();
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Damage type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootDmgType, endLootDmgType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Property" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootProperty, endLootProperty,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
+                                }
                                 if (type.equals("Rod")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder( name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 if (type.equals("Ring")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder( name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 if (type.equals("Shield")) {
                                     loot_display_view.append(
                                             name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity + "\n" +
+                                                    "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity + "\n" +
                                                     "Armor Class: " + ac);
                                 }
                                 if (type.equals("Scroll")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder( name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 if (type.equals("Staff")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder( name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 if (type.equals("Wondrous Item")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder( name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                                 if (type.equals("Wand")) {
-                                    loot_display_view.append(
-                                            name + "\n" + "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
-                                                    "Stealth: " + stealth + "\t\t\t\t" + " Rarity: " + rarity);
+                                    SpannableStringBuilder lootDisplay = new SpannableStringBuilder( name + "\n" +
+                                            "Type: " + type + "\t\t\t\t" + "Weight: " + weight + "\n" +
+                                            "Stealth: " + stealth + "\t\t\t\t" + "Rarity: " + rarity);
+
+                                    //indexes for "name"
+                                    int beginLootName = 0;
+                                    int endLootName = beginLootName + lootNameLength;
+                                    //indexes for "Type"
+                                    int beginLootType = endLootName + "\n".length();
+                                    int endLootType = beginLootType + "Type".length();
+                                    //indexes for "Weight"
+                                    int beginLootWeight = endLootType + ": ".length() + lootTypeLength + "\t\t\t\t".length();
+                                    int endLootWeight = beginLootWeight + "Weight".length();
+                                    //indexes for "Stealth"
+                                    int beginLootStealth = endLootWeight + ": ".length() + lootWeightLength + "\n".length();
+                                    int endLootStealth = beginLootStealth + "Stealth".length();
+                                    //indexes for "Rarity"
+                                    int beginLootRarity = endLootStealth + ": ".length() + lootStealthLength + "\t\t\t\t".length();
+                                    int endLootRarity = beginLootRarity + "Rarity".length();
+
+                                    //set "name" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootName, endLootName,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "type" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootType, endLootType,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "weight" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootWeight, endLootWeight,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Stealth" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootStealth, endLootStealth,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    //set "Rarity" to bold
+                                    lootDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginLootRarity, endLootRarity,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                    loot_display_view.append(lootDisplay);
                                 }
                             }
                         }catch (JSONException e){
