@@ -1,0 +1,234 @@
+INSERT INTO Enemy(Category, Name, Size, Type, Alignment, AC, HP, Speed, Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma, StrSave, DexSave, ConSave, IntSave, WisSave, ChaSave, Skills, Vulnerabilities, DamageResistances, DamageImmunities, ConditionImmunities, Senses, Languages, Challenge, Experience, SpecialTraits)
+VALUES (NULL,'Banshee','Medium','undead','CE',12,58,'fly 40 ft. (hover)','1 (-5)','14 (+2)','10 (+0)','12 (+1)','11 (0)','17 (+3)',NULL,NULL,NULL,NULL,2,4,NULL,NULL,'acid, fire, lightning, thunder; bludgeoning, piercing, and slashing from non magical weapons','cold, necrotic, poison',' charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained',' darkvision 60ft., passive Perception 10','Common, Elvish',4,1100,'Detect life, Incorporeal Movement'); 
+
+
+INSERT INTO Dungeon ([column name here])
+VALUES
+([value1here]),([value2here]),([value3here]),([value4here]),([value5here]);
+
+INSERT INTO Dungeon (type)
+VALUES('stronghold'),('temple'),('tomb'),('prison'),('mine'),('lair'),('palace'),('storage vault'),('sewer'),('maze');
+
+INSERT INTO Dungeon (origin)
+VALUES('an ancient dwarvish clan'),('an ancient elf prince'),('a powerful wizard'),('a dark sorceress'),('a foreign empire'),('an ambitious queen'),('prosperous merchants'),('a powerful noble family'),('religious zealots'),('an ancient race of giants'),('a tyrannical king'),("No one; it's a natural cave");
+
+INSERT INTO Dungeon (location)
+VALUES('beneath a cold mountain'),('beneath a fiery mountain'),('near a well-traveled mountain pass'),('deep within a forest'),('deep within a desert'),('beside the sea'),('on an island'),('beneath a bustling city'),('beneath the ruin of an ancient city'),('beneath a well-known castle'),('beneath a ruin of an old castle'),('beneath an abandoned monastery'),('in a place reachable only by magic');
+
+INSERT INTO Dungeon (occupants)
+VALUES('a dangerous outlaw'),('an elemental lord'),('a vampire'),('a lich'),('a demon'),('a devil'),('an orc warlord'),('a hobgoblin commander'),('an abnormal presence'),('a witch'),('a giant'),('a dragon');
+
+INSERT INTO Dungeon (additional_occupants)
+VALUES('thieves'),('goblins'),('zombies'),('skeletons'),('bats'),('rats'),('spiders'),('oozes'),('kobolds'),('cultists'),('troglodytes'),('ogres');
+
+INSERT INTO Dungeon (challenge)
+VALUES('gauntlet of mechanical traps'),('powerful magical wards'),('golem guardians'),('elemental guardians'),('noxious gas'),('toxic mold'),('horrible curse'),('unstable ceilings'),('flooding chambers'),('sinkholes'),('steam vents and lava flows'),('slippery footing');
+
+INSERT INTO Dungeon (loot)
+VALUES('weapon of a legendary warrior'),('wand of a famous witch or wizard'),('spellbook of a notorious mage'),('treasure stash of a notable pirate'),('hoard of an old dragon'),('treasury of an ancient dwarvish realm'),('artifacts of an elvish hero'),('relics of a celebrated priest'),('chests of silver carried by a lost ship or caravan'),('crown jewels of a long-dead queen'),('largest diamond found in this part of the world'),('staff of an infamous sorcerer or necromancer');
+
+
+
+INSERT INTO VillageTask (subject)
+VALUES('monster'),('noble'),('thief'),('guard'),('peasant'),('cow'),('hooded stranger'),('child');
+
+INSERT INTO VillageTask (problem)
+VALUES('is missing'),('killed someone'),('was found dead'),('stole something'),('is plotting something'),('has been lurking about'),('destroyed something');
+
+INSERT INTO VillageTask (location)
+VALUES('the tavern'),('the river'),('the church'),('the forest'),('the village'),('the mines'),('my house'),('the paddock'),('the market'),('the docks');
+
+INSERT INTO VillageTask (clue)
+VALUES('blood'),('a skull'),('a dagger'),('a letter'),('a key'),('witnesses'),('an arrow'),('footprints'),('a corpse'),('a sack of gold coins');
+
+INSERT INTO VillageTask (suspect_it_involves)
+VALUES('the king'),('the queen'),('my wife'),('the neighbour'),('the barmaid'),('the bartender'),('meddling kids'),('demons from another world'),('the town watch'),('a merchant'),('a cow');
+
+INSERT INTO VillageTask (impeder)
+VALUES('meddling kids'),('town watch'),('wife'),('neighbours'),('cows'),('nobles'),('rich man'),('scoundrel');
+
+INSERT INTO VillageTask (attempt_to_help)
+VALUES('searching the town'),('leaving the town'),('calling for aid'),('drinking, until this has been resolved'),('hosting the annual village dance'),('harvesting our crops'),('speaking out'),('asking any questions');
+
+INSERT INTO VillageTask (reward)
+VALUES('a pouch of silver'),('my best sword'),('a signet ring'),("the mightiest handshake you'll ever receive"),('a treasure map'),('my cow'),("by brother's name, he's in the big city"),('my blessing'),('a gold coin'),('anything you want');
+
+UPDATE Stranger
+SET age = "a teenager"
+WHERE age = "a teenaged";
+
+INSERT INTO Rumor (time)
+VALUES('a year ago from tonight'),('one night last month'),('twice last month'),('twice last week'),('one day last week'),('one night last week'),('three nights ago'),('the day before yesterday'),('the night before last'),('yesterday morning'),('yesterday afternoon'),('just before sunset'),('after sunset'),('after nightfall'),('before midnight'),('past midnight'),('in the wee hours'),('just before dawn'),('at daybreak'),('earlier today');
+
+INSERT INTO Rumor (subject1)
+VALUES('the king/queen'),('a farmer'),('a merchant'),('a wizard'),('a soldier'),('a cleric'),('a druid'),('an orphan'),('a sailor'),('a thief'),('a miner'),('a lord'),('a knight'),('the mayor'),('an innkeeper'),('a dwarf'),('an elf'),('a singer'),('a pirate'),('a witch');
+
+INSERT INTO Rumor (subject2)
+VALUES('a prostitute'),('a drunk'),('an artifact'),('a talking sword'),('a Drow'),('an escaped convict'),('a vial of poison'),('a book of spells'),('a talking animal'),('a sack of coins'),('the prince/princess'),('a fortune teller'),('an alchemist'),('an assassin'),('a barmaid'),('a beggar'),('a saddled horse'),('a hunting hound'),('a mule and cart'),('a fake mustache');
+
+INSERT INTO Rumor (location)
+VALUES('the docks'),('the palace'),('the crafts guild'),('the mages guild'),('the brothel'),('the merchant quarter'),('the tavern'),('the prison'),('the museum'),('the asylum'),('the library'),('the barracks'),('the gatehouse'),('the bridge'),('the temple'),('the market square'),('the warehouse district'),('the garden district'),('the lighthouse'),('the riverfront');
+
+INSERT INTO Rumor (subject3)
+VALUES('a dead commoner'),('a dead monster'),('an explosion'),('a bloody weapon'),('a planar gate'),('a demon'),('a vampire'),('an angry mob'),('a dead noble'),('an arcane sigil'),('a frightened crowd'),('an angel'),('a devil'),('a series of claw marks'),('a series of scorch marks'),('an empty vial'),('a burned book'),('a werewolf'),('a ghost'),('a horde of zombies');
+
+INSERT INTO Rumor (source)
+VALUES('a shopkeeper'),('a basketweaver'),('a grocer'),('a peddler'),('a beggar'),('an urchin'),('a barkeep'),('a serving girl'),('a squire'),('a musician'),('a madame'),('a watchman'),("a ship's captain"),('a peasant woman'),("a fisherman's wife"),('a monk'),('a sellsword'),('a gambler'),('some guy in a pub'),('a little bird');
+
+INSERT INTO Rumor (veracity)
+VALUES('might be true'),('must be true'),('has to be true'),("can't be true"),('could be true'),('is definitely true'),('may be true'),('is likely true'),('is possibly true'),('is certainly true'),('is absolutely true'),('is probably true'),('is likely partially true'),('is definitely not true'),("can't be entirely false"),("isn't likely false"),("isn't likely entirely false"),('might not be true'),("isn't likely the whole story"),('is probably just gossip');
+
+INSERT INTO Stranger (age)
+VALUES('a teenager'),('a young adult'),('an adult'),('a middle-aged'),('an older'),('an ancient'),('more dead than living'),('non-aging');
+
+INSERT INTO Stranger (sex)
+VALUES('woman'),('man'),('person whose sex is hard to tell'),('creature'),('woman'),('man'),('creature');
+
+INSERT INTO Stranger (hair_type)
+VALUES('greasy'),('healthy'),('neat'),('spotty'),('thin'),('thick'),('curly'),('seemingly living');
+
+INSERT INTO Stranger (hair_color)
+VALUES('white'),('grey'),('black'),('dark brown'),('light brown'),('blonde'),('platinum blonde'),('red');
+
+INSERT INTO Stranger (hair_style)
+VALUES('and extraordinarily long hair reaching all the way down the back'),('shoulder long hair'),('long hair'),('long hair done up in a bun'),('long hair done up in a ponytail'),('long braided hair'),('long hair with strange objects braided into it'),('long completely tangled and matted hair'),('long completely tangled and matted hair with strange objects attached'),('short hair'),('stubs after having been shaved off just recently'),('lost long ago to baldness');
+
+INSERT INTO Stranger (mark)
+VALUES('an eye patch'),('a lazy eye'),('greasy glasses'),('a blindfold over the eyes'),('a hat'),('the remnants of a hat'),('a mouth without teeth'),('a mouth filled with gold teeth'),('an alluring smile'),('a great scar'),('a sad look'),('a constant grin'),('a quiet demeanor'),('eyes staring straight into your soul'),('a mutilated face'),('a deformed face'),('a pointy nose'),('the nose cut off'),('an obscure symbol branded on the neck'),('an otherwise extraordinarily ordinary appearance'),('a very long tongue'),('a terrifying libido');
+
+INSERT INTO Stranger (home)
+VALUES('in a small apartment on top of a small shop'),('in a small apartment in an immense apartment building'),('in a small apartment in a damp tenement'),('in a small apartment in a moldy boarding house'),('in a shack built of garbage'),('in a shack in a public park'),('in a shack under a bridge'),('in a shack up in a tree'),('in an inherited villa'),('in an inherited estate'),('in an inherited townhouse'),('in an inherited carriage'),('in a small townhouse with boarded up windows'),('in a small townhouse with heavy curtains covering the windows'),('in a small townhouse with a wilderness for a garden'),('in a small townhouse without any windows at all'),('in a burned down warehouse'),('in a burned down villa'),('in a burned down church'),('in a burned down workshop'),('in an abandoned overgrown warehouse'),('in an abandoned overgrown villa'),('in an abandoned overgrown church'),('in an abandoned overgrown  workshop'),('in a tent in a public park'),('in a tent on a graveyard'),('in a tent under a bridge'),("in a tent in someone else's"),('in a grand estate'),('in a grand villa'),('in a grand apartment'),('in a grand mansion'),('in the basement of an abandoned hospital'),('in the basement of an abandoned hospital'),('in the basement of a workshop'),("in the basement of someone else's house"),('in the basement of a sketchy tavern'),('in a supposedly closet'),('in a supposedly shed'),('in a supposedly tree-house'),('in a supposedly hole in the wall');
+
+INSERT INTO Stranger (home_location)
+VALUES('somewhere in town'),('somewhere outside of town'),('somewhere in the nice part of town'),('somewhere in the slums'),('on the streets, for some reason'),('... beneath the city'),('in a cave'),("somewhere we've all suppressed from our memories"),('in an otherwise desolate part of town'),('near the waterfront');
+
+INSERT INTO Stranger (occupation)
+VALUES('an archivist with an interest for the hideous'),('an archivist with a large collection of obscure trinkets'),('an archivist organizing the strange collection of the local museum'),('an archivist who collects very particular books'),('a priest with little interest in his flock'),("a priest who's slowly but steadily deviating from the pious path"),('a priest who lives in seclusion'),('a priest with a veiled interest in the obscure'),('a collector of peculiar stones'),('a collector of primordial artifacts'),('a collector of cats'),('a collector obscure art'),('a collector of ancient books'),('a collector of old diaries'),('a collector of crime memorabilia'),('a collector of toys'),("an adventurer who's only ever seen leaving home at night"),('an adventurer with a staggering hatred for the undead'),("an adventurer who's constantly preparing for the apocalypse"),("an adventurer who's always just getting drunk alone"),('a doctor with dubious credentials'),("a doctor who's working on an alternative treatment for a rare malady"),("a doctor who's offering treatment to everyone, whether healthy or ill"),('a doctor who is obsessed with immortality'),('a known thief who allegedly has buried the past'),('a known thief who is always on the lookout for someone... Or something'),('a known thief who is getting by selling strange otherworldly goods in an alley'),('a known thief who is only ever stealing from the same person'),('a prostitute always providing for the same mysterious customer'),('a prostitute who is always stumbling around in the streets at night'),('a prostitute who is always seen crying'),('a blacksmith who is always making nails'),('a blacksmith who is making iron masks of customers faces'),('a blacksmith with an affection for toys and dolls'),('a blacksmith who is always makes the same small figurines'),('a guard who enjoys humiliating civilians'),('a guard with a worrying love for power'),('a guard who is only talking to the towns kids and animals'),('a guard with a clear disdain for a local religious order'),('a merchant dealing in very cheap meats'),('a merchant and alleged grave robber'),('a merchant providing a strange assortment of quality products incredibly cheap'),('a merchant whose worryingly old products never seem to be exchanged');
+
+INSERT INTO Stranger (renown)
+VALUES('love'),('hate'),('fear'),('adore'),('worship'),('tolerate'),('barely recognizes'),('has forgotten about');
+
+INSERT INTO Stranger (build)
+VALUES('fat and round'),('built like a horse'),('of athletic stature'),('muscular and strong'),('scrawny'),('physically mostly reminiscent of a curled up dry carrot'),('tall and lanky'),('a midget'),('easily confused with a giant'),('looking more dead than alive');
+
+INSERT INTO Stranger (descriptor)
+VALUES('the cane'),('the strange jumpy walk'),('the beautiful clothes'),('the weird objects hanging from the belt'),('the singing'),('the constant tears'),('the dancing'),('the heavy drinking'),('the bird on the shoulder'),('the marks on the wrists left by handcuffs'),('the whispering'),('the constant blinking'),('the constant blinking'),('the constant blinking'),('the constant head scratching'),('the bleeding wounds'),('the bandages'),('the affection for fire'),('the pale skin'),('the dog'),('the cat');
+
+INSERT INTO Stranger (speech)
+VALUES('with a lisp'),('with a deep voice'),('with a dry hoarse voice'),('with a light squeaking voice'),('with a soft pleasant voice'),('in a strange tongue'),('with a sleazy voice');
+
+
+INSERT INTO Stranger (motive)
+VALUES('keep the secret'),('runaway and hide'),('survive'),('taste it once again'),('never see it again'),('brand him with a hot iron'),('set it all on fire and start over'),('answer the voices'),('honor her trust'),('keep the promise'),('find it'),('hide it'),('destroy it'),('impress him'),('impress her'),('built the construction from the perpetual dreams'),('get revenge'),('prepare for the inevitable'),('make it come alive'),('to finally ascend as promised');
+
+
+
+
+INSERT INTO Quest (location)
+VALUES("a castle"),("a palace"),("a cave"),("a citadel"),("a city"),("a crypt/grave"),("a demiplane"),("an encampment"),("a factory"),("a fortress"),("a gambling hall"),(" a garden"),("a hollow tree"),("a house/manor"),("an island"),("a meteorite cluster"),("a lake"),("a museum"),("a prison"),("a temple/shrine"),("a tomb"),("a tower"),("a vault"),("a zoo"),("a library"),("a nest"),("a gargantuan automaton"),("a cloud"),("a forest"),("a mirror world"),("a hideout");
+
+INSERT INTO Quest (task)
+VALUES("assassinate/destroy"),("consume/imprint"),("corrupt/deface"),("escape with"),("heal/restore"),("hide"),("learn about"),("negotiate with/for"),("perform a ritual with/for"),("perform a ritual with/for"),("photograph/replicate"),("place/plant"),("purify"),("reforge/brainwash"),("replace"),("rob grave of/for"),("sabotage/maim"),("smuggle"),("spread rumor for/about"),("steal/abduct"),("stop/prevent creation of");
+
+INSERT INTO Quest (task_focus)
+VALUES("a book of names"),("a consumable product"),("a creature"),("some creature parts/ingredients"),("an egg"),("explosives"),("an item piece"),("a jewel"),("a ledger"),("a legend"),("a magical object"),("a magical product"),("a message"),("an organ"),("a person"),("some potential blackmail material"),("a riddle"),("a secret document"),("a seed pod"),("a song"),("a source of power"),("a spell/curse"),("a symbol"),("some trap parts/plans"),("a treasure hoard"),("a treasure object"),("a vehicle/machine"),("a warning"),("a weapon"),("a word/rune of power");
+
+INSERT INTO Quest (guarded_by)
+VALUES("aberrations"),("beasts"),("celestials"),("dragons"),("elementals"),("fey"),("fiends"),("giants"),("humanoids"),("monstrosities"),("oozes"),("plants"),("undead");
+
+INSERT INTO Quest (alertness)
+VALUES("alerted that they are coming"),("aware of their presence"),("unaware of their presence");
+
+INSERT INTO Quest (time_limit)
+VALUES("a conflict happens"),("a creature/person/god does it alone"),("a detail changes"),("a great change happens"),("a transformation is complete"),("an object is destroyed"),("damage is irreversible"),("development is done"),("something expires"),("sunrise/sunset"),("the location is destroyed"),("the objective changes location"),("the opposition beats them to it"),("the PCs change"),("the personnel make a duty shift/are fed"),("the planets align"),("the quest giver changes his/her mind"),("they are killed"),("they can't go back"),("they die");
+
+INSERT INTO Quest (twist)
+VALUES("within the belly of a creature that consumed it"),("decaying once removed from place"),("encased in glass"),("fake"),("guarded by a fierce creature"),("hidden"),("located at a physically hazardous area"),("locked/chained away"),("magically warded"),("requires a password"),("trapped"),("unstable when it comes into contact");
+
+INSERT INTO Quest (consequence)
+VALUES("banished"),("cursed"),("dead"),("encased in ice"),("subjected to cruel experiments"),("fed to a creature"),("humiliated"),("imprisoned"),("mind wiped"),("mutated"),("questioned"),("forced to repeat their training exercises"),("replaced"),("sent back in time"),("sent to a demiplane"),("sent to the future"),("set in an elaborate slow death trap"),("silenced"),("tortured"),("turned into a tree/stone");
+
+
+/////tab activity java
+ /**
+     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+     * one of the sections/tabs/pages.
+     */
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            //returning the current tabs
+            switch (position) {
+                case 0:
+                    combat_encounter_generator tab1 = new combat_encounter_generator();
+                    return tab1;
+                default:
+                    return null;
+            }
+
+        }
+		
+
+        @Override
+        public int getCount() {
+            // Show 3 total pages.
+            return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "Combat";
+                case 1:
+                    return "SECTION 2";
+                case 2:
+                    return "SECTION 3";
+            }
+            return null;
+        }
+    }
+}
+
+
+
+
+//////combat java
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Spinner;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
+
+//Tab Code
+public class Tab1Combat extends Fragment {
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.tab1combat, container, false);
+        return rootView;
+    }
+
+}
+
+////combat xml
+tools:context="theadventuringparty.theadventuringpartyplanner.TabActivity$PlaceholderFragment"
+
+
+
+@Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            Intent intent = new Intent(this, Main2Activity.class);
+            startActivity(intent);
+            //setContentView(R.layout.combat_encounter_generator);
+        }
