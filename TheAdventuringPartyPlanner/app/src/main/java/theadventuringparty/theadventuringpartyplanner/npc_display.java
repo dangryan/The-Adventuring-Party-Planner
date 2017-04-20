@@ -2,8 +2,12 @@ package theadventuringparty.theadventuringpartyplanner;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -104,24 +108,28 @@ public class npc_display extends AppCompatActivity{
 
                                 String quality = npc.getString("voice");
                                 String accent = npc.getString("accent");
-
                                 String fname_first_syllable = npc.getString("fname_syll_1");
                                 String fname_second_syllable = npc.getString("fname_syll_2");
-
                                 String lname_first_syllable = npc.getString("lname_syll_1");
                                 String lname_second_syllable = npc.getString("lname_syll_2");
-
                                 String race = npc.getString("race");
                                 String npcClass = npc.getString("class");
                                 String profession = npc.getString("profession");
 
-
-                                npc_display_view.append(
+                                SpannableStringBuilder npcDisplay = new SpannableStringBuilder(
                                         fname_first_syllable + fname_second_syllable + " " +  lname_first_syllable + lname_second_syllable + "\n" +
-                                                " is a(n) "+ race + " " + npcClass + " with a(n) " + quality + " " +  accent + " voice. \n" +
-                                                "They work as a " + profession +" in the local town. \n" +
-                                                "_______________________________" + "\n\n");
+                                        " is a(n) "+ race + " " + npcClass + " with a(n) " + quality + " " +  accent + " voice. \n" +
+                                        "They work as a " + profession +" in the local town. \n" +
+                                        "___________________________________________________" + "\n\n");
 
+                                //indexes for "name"
+                                int beginNpcName = 0;
+                                int endNpcName = beginNpcName + fname_first_syllable.length() + fname_second_syllable.length() + " ".length() + lname_first_syllable.length() + lname_second_syllable.length();
+
+                                //set "name" to bold
+                                npcDisplay.setSpan(new StyleSpan(Typeface.BOLD), beginNpcName, endNpcName, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                npc_display_view.append(npcDisplay);
                             }
                         }catch (JSONException e){
                             e.printStackTrace();
