@@ -69,11 +69,10 @@ public class Tab2Event extends Fragment{
                     displayQuestOutput(eventUrl);
                 }
                 else {
-                    eventTypeChoice = "Village%20Task";}
+                    eventTypeChoice = "Village%20Task";
                     eventUrl = "http://cgi.soic.indiana.edu/~team39/event.php?type=" + eventTypeChoice;
                     displayVillageTaskOutput(eventUrl);
                 }
-
             }
 
             //You'll have to make one of these for each Event Type (Dungeon, Rumor, Stranger, Villain, VillageTask, Quest)
