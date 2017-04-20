@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:fontFamily="serif"
-        android:text="NonCombat Event Generator"
+        android:text="Events"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp" />
 
@@ -31,27 +31,31 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/pageTitle"
-        android:layout_alignStart="@+id/pageTitle"
-        android:layout_below="@+id/pageTitle"
-        android:layout_marginTop="57dp"
         android:fontFamily="serif"
         android:text="Event Type"
-        android:textColor="@color/colorPrimaryDark" />
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_above="@+id/generateButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16sp" />
 
 
     <Spinner
         android:id="@+id/eventTypeSpinner"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_alignRight="@+id/pageTitle"
-        android:layout_alignEnd="@+id/pageTitle"
         android:layout_width="50dp"
         android:background="@color/light_brown"
-        android:layout_alignLeft="@+id/generateButton"
-        android:layout_alignStart="@+id/generateButton"
         android:layout_height="25dp"
         android:entries="@array/nonCombatEventType"
-        android:popupBackground="@color/light_brown"/>
+        android:popupBackground="@color/light_brown"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_toRightOf="@+id/pageTitle"
+        android:layout_toEndOf="@+id/pageTitle" />
 
     <Button
         android:layout_width="50dp"
@@ -59,22 +63,22 @@
         android:id="@+id/generateButton"
         android:textColor="@android:color/background_light"
         android:fontFamily="serif"
-        android:layout_marginTop="21dp"
         android:background="@drawable/die"
         android:backgroundTint="@color/color_primary_dark2"
-        android:layout_below="@+id/eventTypeSpinner"
-        android:layout_centerHorizontal="true"/>
+        android:layout_above="@+id/campaignMotivationTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp" />
 
     <TextView
         android:text="Roll!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/generateButton"
-        android:layout_centerHorizontal="true"
         android:id="@+id/buttonLabel"
         android:textSize="12sp"
         android:fontFamily="serif"
-        android:textColor="@android:color/background_dark"/>
+        android:textColor="@android:color/background_dark"
+        android:layout_above="@+id/campaignMotivationTextView"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="match_parent"
@@ -82,10 +86,10 @@
         android:textColor="@color/colorPrimaryDark"
         android:fontFamily="serif"
         android:scrollbars="vertical"
-        android:layout_marginTop="20dp"
         android:layout_height="200dp"
-        android:layout_below="@+id/buttonLabel"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="58dp" />
 
 </RelativeLayout>
