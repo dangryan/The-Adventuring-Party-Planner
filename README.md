@@ -18,4 +18,4 @@ Authors
 
 Graphs
 
-![alt text](https://github.com/dangryan/The-Adventuring-Party-Planner/capstone_contribution_graph.png?raw=true "Contribution Graphs")
+![alt text](https://github.com/dangryan/The-Adventuring-Party-Planner/capstone_contribution_graph.png "Contribution Graphs")
