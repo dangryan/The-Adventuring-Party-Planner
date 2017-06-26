@@ -1,3 +1,5 @@
+**This project was initially on GitHub.iu.edu and was transferred to GitHub.com**
+
 The Adventuring Party Planner
 
 At the very core, Dungeons and Dragons and other tabletop role playing games are based on storytelling. The players work together to overcome fierce battles, daunting quests, powerful monsters, labyrinthian dungeons, and much more. The Game Master or “GM” is tasked with creating a captivating and fresh story for the group. This can be a daunting task for even a seasoned player. 
@@ -13,3 +15,5 @@ Authors
 - Josh Richardson (Database Lead)  
 - Austin Bohr (Team Manager)  
 - Kenny Kha (Lead Designer)  
+
+Graphs
