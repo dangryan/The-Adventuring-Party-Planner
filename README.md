@@ -1,4 +1,4 @@
-**This project was initially on GitHub.iu.edu and was transferred to GitHub.com**
+*This project was initially on GitHub.iu.edu and was transferred to GitHub.com*
 
 The Adventuring Party Planner
 
@@ -17,3 +17,5 @@ Authors
 - Kenny Kha (Lead Designer)  
 
 Graphs
+
+![alt text](https://github.com/dangryan/The-Adventuring-Party-Planner/capstone_contribution_graph.png?raw=true "Contribution Graphs")
